@@ -1,0 +1,151 @@
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar {
+  background-color: pink;
+  width: 100%;
+}
+.navItem {
+  color: gold;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.img-home {
+  width: 100%;
+  height: auto;
+}
+
+.text-home {
+  position: absolute;
+  left: 50%; /* horizontal alignment */
+  top: 15%; /* vertical alignment */
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-family: cursive;
+  font-size: large;
+  font-weight: bold;
+  width: 25%;
+}
+
+.product-detail-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 1em;
+}
+
+.product {
+  width: 18%;
+}
+
+.product-img {
+  max-width: 100%;
+  text-align: center;
+}
+.product-text {
+  font-weight: bold;
+  text-align: center;
+}
+
+.product-price {
+  text-align: center;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+}
+
+.rating-text {
+  font-size: small;
+}
+
+.cart-container {
+  display: flex;
+  height: 7%;
+}
+
+.quantity-container {
+  display: flex;
+  flex-direction: row;
+  width: 15%;
+  border: solid black;
+}
+
+.increment-button {
+  background-color: white;
+  width: 90%;
+  border: none;
+}
+
+.increment-text {
+  width: 90%;
+  align-self: center;
+  text-align: center;
+}
+
+.add-cart-button {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  background-color: aquamarine;
+  height: 100%;
+  width: 150%;
+  margin-left: 1em;
+  border: none;
+}
+
+@media (max-width: 920px) {
+  .product {
+    flex: 1 21%;
+  }
+}
+
+@media (max-width: 600px) {
+  .product {
+    flex: 1 46%;
+  }
+  .review-container {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    padding-left: 2em;
+  }
+  .stars-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 60%;
+  }
+  .review-content {
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    min-width: 90%;
+  }
+  .review-button {
+    margin-bottom: 1em;
+  }
+
+  #dropdown-basic-button {
+    width: 300%;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    border: solid black;
+    border-radius: 8px;
+    margin-bottom: 1em;
+  }
+}

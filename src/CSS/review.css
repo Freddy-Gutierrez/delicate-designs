@@ -1,0 +1,85 @@
+.review-container {
+  display: flex;
+  justify-content: space-around;
+  border: solid black;
+  border-width: 5px;
+}
+
+.review-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 2%;
+  padding-right: 2%;
+  /* width: 65%; */
+  border: solid black;
+}
+
+.feedback-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 100%;
+  border: solid red;
+}
+
+.two-col {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-button {
+  height: 50px;
+  width: 200px;
+  max-width: 200px;
+  margin-top: 0.3em;
+  background: white;
+  color: pink;
+  font-weight: bold;
+  font-size: medium;
+  border: solid pink;
+  border-radius: 8px;
+}
+
+.review-button:hover {
+  background: pink;
+  color: white;
+}
+
+.review-content-filters {
+  display: flex;
+  align-content: space-between;
+  flex-wrap: nowrap;
+}
+
+#dropdown-basic-button {
+  width: 30em;
+  max-width: 400px;
+  flex: 1;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  border: solid black;
+  border-radius: 8px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.stars-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 2%;
+  /* width: 33%; */
+  border: solid black;
+}
+
+.star-component {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.progress {
+  width: 35%;
+  margin-top: 0.5em;
+}
