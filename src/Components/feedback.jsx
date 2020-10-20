@@ -3,27 +3,34 @@ import StarRatings from "react-star-ratings";
 const Feedback = (props) => {
   console.log(props.reviews);
   return (
-    <div>
-      {props.reviews.map((review) => {
+    <div className="review-row">
+      {props.reviews.map((review, index) => {
         return (
-          <div className="feedback-container" key={review.username}>
-            <h3>{review.username}</h3>
-            <div className="break"></div>
-            <div className="two-col">
-              <p className="rating">Rating</p>
-              <p className="posted">Posted</p>
+          <div className="feedback-container" key={index}>
+            <div className="review-row">
+              <h3>{review.username}</h3>
             </div>
-            <div className="break"></div>
             <div className="two-col">
-              <span>
-                <StarRatings
-                  rating={review.rating}
-                  starRatedColor="rgb(255,223,0)"
-                  starDimension={"20px"}
-                  starSpacing={"0px"}
-                />
-                <p>{review.date}</p>
-              </span>
+              <p className="p-review">Rating</p>
+              <p className="p-review">Posted</p>
+            </div>
+            <div className="two-col">
+              <StarRatings
+                rating={review.rating}
+                starRatedColor="rgb(255,223,0)"
+                starDimension={"15px"}
+                starSpacing={"0px"}
+              />
+              <p style={{ marginLeft: "2em" }}>{review.date}</p>
+            </div>
+            <div className="review-row">
+              <div className="review-comment">{review.review}</div>
+              <div>
+                <p
+                  className="helpful"
+                  onClick={(_id) => props.onClick(review._id)}
+                >{`Helpful(${review.helpful})`}</p>
+              </div>
             </div>
           </div>
         );

@@ -19,11 +19,15 @@ class ProductDetails extends Component {
       <div>
         <h1>Product details</h1>
         <div className="product-detail-container">
-          <img src={product.src} alt={product.alt} />
+          <img
+            src={product.src}
+            alt={product.alt}
+            className="product-detail-img"
+          />
           <div>
-            <h2>{product.title}</h2>
-            <p>{product.description}</p>
-            <div className="cart-container">
+            <h2 className="title">{product.title}</h2>
+            <p className="description">{product.description}</p>
+            <div className="add-to-cart-container">
               <div className="quantity-container">
                 <button
                   className="increment-button"
@@ -41,7 +45,15 @@ class ProductDetails extends Component {
                 </button>
               </div>
               <div>
-                <button className="add-cart-button">ADD TO CART</button>
+                <button
+                  className="add-cart-button"
+                  disabled={this.state.quantity === 0 ? true : false}
+                  onClick={(item, quantity) =>
+                    this.props.onClick(product, this.state.quantity)
+                  }
+                >
+                  ADD TO CART
+                </button>
               </div>
             </div>
           </div>

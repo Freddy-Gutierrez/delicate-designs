@@ -1,0 +1,54 @@
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .carousel-container {
+    border: solid black;
+    background-color: black;
+  }
+
+  .carousel-img {
+    width: 100vw;
+    height: 90vh;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .carousel-container {
+    border: solid black;
+    background-color: black;
+  }
+
+  .carousel-img {
+    margin-left: 10%;
+    width: 80vw;
+    height: 90vh;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .carousel-container {
+    border: solid black;
+    background-color: black;
+  }
+
+  .carousel-img {
+    margin-left: 25%;
+    width: 50vw;
+    height: 90vh;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .carousel-container {
+    border: solid black;
+    background-color: black;
+  }
+
+  .carousel-img {
+    margin-left: 25%;
+    width: 50vw;
+    height: 90vh;
+  }
+}

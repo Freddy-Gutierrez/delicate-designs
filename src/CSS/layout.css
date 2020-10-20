@@ -4,9 +4,19 @@
 }
 
 .navbar {
-  background-color: pink;
+  background-color: white;
   width: 100%;
 }
+.cart-icon {
+  height: 30px;
+  width: 30px;
+}
+
+.ddlogo {
+  height: 50px;
+  width: 50px;
+}
+
 .navItem {
   color: gold;
 }
@@ -31,11 +41,6 @@
   font-size: large;
   font-weight: bold;
   width: 25%;
-}
-
-.product-detail-container {
-  display: flex;
-  flex-wrap: nowrap;
 }
 
 .product-container {
@@ -71,41 +76,6 @@
   font-size: small;
 }
 
-.cart-container {
-  display: flex;
-  height: 7%;
-}
-
-.quantity-container {
-  display: flex;
-  flex-direction: row;
-  width: 15%;
-  border: solid black;
-}
-
-.increment-button {
-  background-color: white;
-  width: 90%;
-  border: none;
-}
-
-.increment-text {
-  width: 90%;
-  align-self: center;
-  text-align: center;
-}
-
-.add-cart-button {
-  color: white;
-  font-size: larger;
-  font-weight: bold;
-  background-color: aquamarine;
-  height: 100%;
-  width: 150%;
-  margin-left: 1em;
-  border: none;
-}
-
 @media (max-width: 920px) {
   .product {
     flex: 1 21%;
@@ -118,10 +88,9 @@
   }
   .review-container {
     display: flex;
-    flex-flow: column;
     flex-wrap: wrap;
-    flex-basis: 50%;
-    padding-left: 2em;
+    flex-basis: 70%;
+    justify-content: flex-start;
   }
   .stars-container {
     display: flex;
@@ -140,7 +109,7 @@
   }
 
   #dropdown-basic-button {
-    width: 300%;
+    max-width: 300px;
     color: black;
     font-weight: bold;
     background-color: white;

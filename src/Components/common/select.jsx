@@ -8,7 +8,7 @@ const Select = (props) => {
         title={props.title}
         onSelect={(evt) => props.onClick(evt)}
       >
-        {props.options.map((op) => {
+        {props.options.map((op, index) => {
           return (
             <Dropdown.Item key={op} as="button" eventKey={op}>
               {op}

@@ -1,85 +1,458 @@
-.review-container {
-  display: flex;
-  justify-content: space-around;
-  border: solid black;
-  border-width: 5px;
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .review-container {
+    display: flex;
+    width: 75%;
+    margin: auto;
+    border-width: 5px;
+  }
+
+  /* css for stars container on left of page */
+  .stars-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40%;
+    padding-left: 2%;
+  }
+
+  .star-component {
+    display: flex;
+    flex-basis: 100%;
+  }
+
+  .progress {
+    width: 60%;
+    margin-top: 0.5em;
+  }
+
+  /* css for right column of page */
+  .review-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+    flex-basis: 100%;
+  }
+
+  .review-button {
+    height: 50px;
+    width: 150px;
+    max-width: 200px;
+    margin-top: 0.3em;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    border: solid black;
+    border-radius: 8px;
+  }
+
+  .review-button:hover {
+    background: black;
+    color: white;
+  }
+
+  .review-content-filters {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  #dropdown-basic-button {
+    width: 400px;
+    flex: 1;
+    color: grey;
+    font-weight: bold;
+    background-color: white;
+    border: solid grey;
+    border-radius: 8px;
+    border-width: 1px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .feedback-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    border-bottom: solid 1px grey;
+  }
+
+  .review-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 100%;
+  }
+
+  .two-col {
+    display: flex;
+    flex-basis: 100%;
+  }
+
+  .review-username {
+    flex-basis: 100%;
+  }
+
+  .review-comment {
+    font-size: 25px;
+    padding-bottom: 5%;
+  }
+
+  .helpful {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    padding-top: 2em;
+  }
+
+  .p-review {
+    margin-right: 4em;
+    color: grey;
+  }
 }
 
-.review-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-left: 2%;
-  padding-right: 2%;
-  /* width: 65%; */
-  border: solid black;
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .review-container {
+    display: flex;
+    width: 100%;
+    margin: auto;
+  }
+
+  /* css for stars container on left of page */
+  .stars-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40%;
+    padding-left: 2%;
+  }
+
+  .star-component {
+    display: flex;
+    flex-basis: 100%;
+  }
+
+  .progress {
+    width: 50%;
+    margin-top: 0.5em;
+  }
+
+  /* css for right column of page */
+  .review-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+    flex-basis: 100%;
+  }
+
+  .review-button {
+    height: 50px;
+    width: 150px;
+    max-width: 200px;
+    margin-top: 0.3em;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    border: solid black;
+    border-radius: 8px;
+  }
+
+  .review-button:hover {
+    background: black;
+    color: white;
+  }
+
+  .review-content-filters {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  #dropdown-basic-button {
+    width: 400px;
+    flex: 1;
+    color: grey;
+    font-weight: bold;
+    background-color: white;
+    border: solid grey;
+    border-radius: 8px;
+    border-width: 1px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .feedback-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    border-bottom: solid 1px grey;
+  }
+
+  .review-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 100%;
+  }
+
+  .two-col {
+    display: flex;
+    flex-basis: 100%;
+  }
+
+  .review-username {
+    flex-basis: 100%;
+  }
+
+  .review-comment {
+    font-size: 25px;
+    padding-bottom: 5%;
+  }
+
+  .helpful {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    padding-top: 2em;
+  }
+
+  .p-review {
+    margin-right: 4em;
+    color: grey;
+  }
 }
 
-.feedback-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 0 0 100%;
-  border: solid red;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .review-container {
+    display: flex;
+    width: 100%;
+    margin: auto;
+  }
+
+  /* css for stars container on left of page */
+  .stars-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40%;
+    padding-left: 2%;
+  }
+
+  .star-component {
+    display: flex;
+    flex-basis: 100%;
+  }
+
+  .progress {
+    width: 60%;
+    margin-top: 0.5em;
+  }
+
+  /* css for right column of page */
+  .review-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+    flex-basis: 100%;
+  }
+
+  .review-button {
+    height: 50px;
+    width: 200px;
+    max-width: 200px;
+    margin-top: 0.3em;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    border: solid black;
+    border-radius: 8px;
+  }
+
+  .review-button:hover {
+    background: black;
+    color: white;
+  }
+
+  .review-content-filters {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  #dropdown-basic-button {
+    width: 400px;
+    flex: 1;
+    color: grey;
+    font-weight: bold;
+    background-color: white;
+    border: solid grey;
+    border-radius: 8px;
+    border-width: 1px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .feedback-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    border-bottom: solid 1px grey;
+  }
+
+  .review-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 100%;
+  }
+
+  .two-col {
+    display: flex;
+    flex-basis: 100%;
+  }
+
+  .review-username {
+    flex-basis: 100%;
+  }
+
+  .review-comment {
+    font-size: 25px;
+    padding-bottom: 5%;
+  }
+
+  .helpful {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    padding-top: 2em;
+  }
+
+  .p-review {
+    margin-right: 4em;
+    color: grey;
+  }
 }
 
-.two-col {
-  display: flex;
-  justify-content: space-between;
-}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .review-container {
+    display: flex;
+    width: 75%;
+    margin: auto;
+    border-width: 5px;
+  }
 
-.review-button {
-  height: 50px;
-  width: 200px;
-  max-width: 200px;
-  margin-top: 0.3em;
-  background: white;
-  color: pink;
-  font-weight: bold;
-  font-size: medium;
-  border: solid pink;
-  border-radius: 8px;
-}
+  /* css for stars container on left of page */
+  .stars-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 40%;
+    padding-left: 2%;
+  }
 
-.review-button:hover {
-  background: pink;
-  color: white;
-}
+  .star-component {
+    display: flex;
+    flex-basis: 100%;
+  }
 
-.review-content-filters {
-  display: flex;
-  align-content: space-between;
-  flex-wrap: nowrap;
-}
+  .progress {
+    width: 60%;
+    margin-top: 0.5em;
+  }
+  /*  */
 
-#dropdown-basic-button {
-  width: 30em;
-  max-width: 400px;
-  flex: 1;
-  color: black;
-  font-weight: bold;
-  background-color: white;
-  border: solid black;
-  border-radius: 8px;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
+  /* css for right column of page */
+  .review-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 2%;
+    padding-right: 2%;
+    flex-basis: 100%;
+  }
 
-.stars-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 2%;
-  /* width: 33%; */
-  border: solid black;
-}
+  .review-button {
+    height: 50px;
+    width: 200px;
+    max-width: 200px;
+    margin-top: 0.3em;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    border: solid black;
+    border-radius: 8px;
+  }
 
-.star-component {
-  display: flex;
-  flex-basis: 100%;
-  align-items: center;
-  /* justify-content: space-between; */
-}
+  .review-button:hover {
+    background: black;
+    color: white;
+  }
 
-.progress {
-  width: 35%;
-  margin-top: 0.5em;
+  .review-content-filters {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  #dropdown-basic-button {
+    width: 400px;
+    flex: 1;
+    color: grey;
+    font-weight: bold;
+    background-color: white;
+    border: solid grey;
+    border-radius: 8px;
+    border-width: 1px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .feedback-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    border-bottom: solid 1px grey;
+  }
+
+  .review-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 100%;
+  }
+
+  .two-col {
+    display: flex;
+    flex-basis: 100%;
+  }
+
+  .review-username {
+    flex-basis: 100%;
+  }
+
+  .review-comment {
+    font-size: 25px;
+    padding-bottom: 5%;
+  }
+
+  .helpful {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    padding-top: 2em;
+  }
+
+  .p-review {
+    margin-right: 4em;
+    color: grey;
+  }
 }

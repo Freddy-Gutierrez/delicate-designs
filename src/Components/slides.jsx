@@ -5,31 +5,30 @@ class Slides extends Component {
   render() {
     return (
       <div>
-        <Carousel>
+        <Carousel className="carousel-container">
           <Carousel.Item>
-            <img className="d-block w-100" src="/beach.jpg" alt="First slide" />
-            <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </Carousel.Caption>
+            <img className="carousel-img" src="/watermelon_cup.jpg" alt="Watermelon Cup" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100" src="/beach.jpg" alt="Third slide" />
-
-            <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
+            <img className="carousel-img" src="/fall_pillow.jpg" alt="Fall Pillow" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="d-block w-100" src="/beach.jpg" alt="Third slide" />
-
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
+            <img className="carousel-img" src="/stitch_cup.jpg" alt="Stitch Cup" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="carousel-img" src="/ghost_pillow.jpg" alt="Ghost Pillow" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="carousel-img" src="/star_wars_cup.jpg" alt="Star Wars Cup" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="carousel-img" src="/witch_pillow.jpg" alt="Witch Pillow" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="carousel-img" src="/summer_cups.jpg" alt="Summer Cups" />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="carousel-img" src="/halloween_pillow.jpg" alt="Halloween Pillow" />
           </Carousel.Item>
         </Carousel>
       </div>

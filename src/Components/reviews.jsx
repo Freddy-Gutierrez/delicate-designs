@@ -4,11 +4,13 @@ import { NavLink } from "react-router-dom";
 import { ProgressBar } from "react-bootstrap";
 import Select from "./common/select";
 import Feedback from "./feedback";
+
 class Reviews extends Component {
-  state = { allReviews: [] };
+  state = { allReviews: [], displayedReviews: [] };
 
   componentDidMount() {
     const { reviews } = this.props.location.state.product;
+    console.log(reviews);
     const fiveStars = {
       reviews: reviews.filter((r) => r.rating === 5),
       rating: 5,
@@ -29,16 +31,38 @@ class Reviews extends Component {
       reviews: reviews.filter((r) => r.rating === 1),
       rating: 1,
     };
-    const allReviews = [fiveStars, fourStars, threeStars, twoStars, oneStars];
-    this.setState({ allReviews });
+
+    let allReviews = [...this.state.allReviews];
+    allReviews.push(fiveStars, fourStars, threeStars, twoStars, oneStars);
+    this.setState({ allReviews, displayedReviews: reviews });
   }
 
-  filterReviews = (option) => {
+  sortReviews = (option) => {
     console.log(option);
+  };
+
+  showReviews = (option) => {
+    if (option === "All Ratings") {
+      const { reviews } = this.props.location.state.product;
+      this.setState({ displayedReviews: reviews });
+    } else {
+      let reviews = { ...this.state };
+      let key = parseInt(option.charAt(0));
+      let displayedReviews = reviews.allReviews.filter(
+        (r) => r.rating === key
+      )[0].reviews;
+      this.setState({ displayedReviews });
+    }
+  };
+
+  incrementHelpful = (_id) => {
+    // given id make call to update in db
+    console.log(_id);
   };
 
   render() {
     const { product } = this.props.location.state;
+    if (this.state.allReviews.length === 0) return "";
     return (
       <div className="review-container">
         <div className="stars-container">
@@ -46,45 +70,47 @@ class Reviews extends Component {
           <div className="break"></div>
           {this.state.allReviews.map((star) => {
             return (
-              <React.Fragment key={star.rating}>
-                <div className="star-component">
-                  <StarRatings
-                    rating={star.rating}
-                    starRatedColor="rgb(255,223,0)"
-                    starDimension={"20px"}
-                    starSpacing={"0px"}
-                  />
-                  <ProgressBar now={75} />
-                  <NavLink to="">{`(${star.reviews.length})`}</NavLink>
-                </div>
-                <div className="break"></div>
-              </React.Fragment>
+              <div className="star-component" key={star.rating}>
+                <StarRatings
+                  rating={star.rating}
+                  starRatedColor="rgb(255,223,0)"
+                  starDimension={"20px"}
+                  starSpacing={"0px"}
+                />
+                <ProgressBar now={75} />
+                <NavLink to="">{`(${star.reviews.length})`}</NavLink>
+              </div>
             );
           })}
         </div>
         <div className="review-content">
-          <h3>All Reviews</h3>
-          <button className="review-button">Write a review</button>
-          <div className="break"></div>
-          <Select
-            title="Sort By"
-            options={["Recent", "Helpful"]}
-            onClick={this.filterReviews}
+          <div className="review-row">
+            <h1>All Reviews</h1>
+            <button className="review-button">Write a review</button>
+          </div>
+          <div className="review-row">
+            <Select
+              title="Sort By"
+              options={["Recent", "Helpful"]}
+              onClick={this.sortReviews}
+            />
+            <Select
+              title="Show"
+              options={[
+                "All Ratings",
+                "5 Stars",
+                "4 Stars",
+                "3 Stars",
+                "2 Stars",
+                "1 Star",
+              ]}
+              onClick={this.showReviews}
+            />
+          </div>
+          <Feedback
+            reviews={this.state.displayedReviews}
+            onClick={this.incrementHelpful}
           />
-          <Select
-            title="Show"
-            options={[
-              "All Ratings",
-              "5 Stars",
-              "4 Stars",
-              "3 Stars",
-              "2 Stars",
-              "1 Star",
-            ]}
-            onClick={this.filterReviews}
-          />
-          <div className="break"></div>
-          <Feedback reviews={product.reviews} />
         </div>
       </div>
     );
