@@ -1,5 +1,5 @@
 {
-	"src": "/tumblers/angels/main.jpg",
+	"src": "/tumblers/angels",
 	"alt":"Angels Tumbler",
 	"productType" : "Tumbler",
 	"title": "Angels Tumbler",
@@ -8,7 +8,7 @@
 	"avgRating" : 0
 },
 {
-	"src": "/tumblers/bride/main.jpg",
+	"src": "/tumblers/bride",
 	"alt":"Bride Tumbler",
 	"productType" : "Tumbler",
 	"title": "Bride Tumbler",
@@ -17,7 +17,7 @@
 	"avgRating" : 0
 },
 {
-	"src": "/tumblers/groom/main.jpg",
+	"src": "/tumblers/groom",
 	"alt":"Groom Tumbler",
 	"productType" : "Tumbler",
 	"title": "Groom Tumbler",
@@ -26,7 +26,7 @@
 	"avgRating" : 0
 },
 {
-	"src": "/tumblers/stitch/main.jpg",
+	"src": "/tumblers/stitch",
 	"alt":"Stitch Tumbler",
 	"productType" : "Tumbler",
 	"title": "Stitch Tumbler",
@@ -35,7 +35,7 @@
 	"avgRating" : 0
 },
 {
-	"src": "/tumblers/summer/main.jpg",
+	"src": "/tumblers/summer",
 	"alt":"Summer Tumbler",
 	"productType" : "Tumbler",
 	"title": "Summer Tumbler",
@@ -44,7 +44,7 @@
 	"avgRating" : 0
 },
 {
-	"src": "/tumblers/sunflower/main.jpg",
+	"src": "/tumblers/sunflower",
 	"alt":"Sunflower Tumbler",
 	"productType" : "Tumbler",
 	"title": "Sunflower Tumbler",
@@ -53,7 +53,7 @@
 	"avgRating" : 0
 },
 {
-	"src": "/tumblers/unicorn/main.jpg",
+	"src": "/tumblers/unicorn",
 	"alt":"Unicorn Tumbler",
 	"productType" : "Tumbler",
 	"title": "Unicorn Tumbler",
@@ -62,7 +62,7 @@
 	"avgRating" : 0
 },
 {
-	"src": "/tumblers/watermelon/main.jpg",
+	"src": "/tumblers/watermelon",
 	"alt":"Watermelon Tumbler",
 	"productType" : "Tumbler",
 	"title": "Watermelon Tumbler",
@@ -71,7 +71,7 @@
 	"avgRating" : 0
 },
 {
-	"src": "/tumblers/witch/main.jpg",
+	"src": "/tumblers/witch",
 	"alt":"Witch Tumbler",
 	"productType" : "Tumbler",
 	"title": "Witch Tumbler",

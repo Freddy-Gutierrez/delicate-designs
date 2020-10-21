@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import StarRatings from "react-star-ratings";
 import { NavLink } from "react-router-dom";
+
+const image = "/option0.jpg";
 class Products extends Component {
   state = {};
   render() {
@@ -15,7 +17,7 @@ class Products extends Component {
             <div className="product" key={product._id}>
               <img
                 className="product-img"
-                src={product.src}
+                src={product.src + image}
                 alt={product.alt}
                 onClick={() =>
                   this.props.history.push({

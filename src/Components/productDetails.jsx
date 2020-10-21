@@ -1,7 +1,22 @@
 import React, { Component } from "react";
 
+const option0 = "/option0.jpg";
+
 class ProductDetails extends Component {
-  state = { quantity: 1 };
+  
+  state = { 
+    product: null,
+    selectedSrc: null,
+    quantity: 1 };
+
+  componentDidMount() {
+    const { product } = this.props.location.state;
+    this.setState({product, selectedSrc: product.src + option0})
+  }
+
+  updateImage = (e) => {
+    this.setState({selectedSrc: e.target.src})
+  }
 
   incrementQuantity = () => {
     let quantity = this.state.quantity + 1;
@@ -14,13 +29,25 @@ class ProductDetails extends Component {
   };
 
   render() {
-    const { product } = this.props.location.state;
+    const { product, selectedSrc } = this.state;
+    const option1 = "/option1.jpg";
+    const option2 = "/option2.jpg";
+    const option3 = "/option3.jpg";
+    const option4 = "/option4.jpg";
     return (
+      !this.state.product ? <div/> :
       <div>
         <h1>Product details</h1>
         <div className="product-detail-container">
+          <div className="product-img-options">
+            <img src={product.src + option0} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)}/>
+            <img src={product.src + option1} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} />
+            <img src={product.src + option2} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} />
+            <img src={product.src + option3} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} />
+            <img src={product.src + option4} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} />
+          </div>
           <img
-            src={product.src}
+            src={selectedSrc}
             alt={product.alt}
             className="product-detail-img"
           />
