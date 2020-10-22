@@ -14,6 +14,7 @@ import Cart from "./Components/cart";
 import ProductsPage from './Components/productsPage';
 class App extends Component {
   state = {
+    cartIcon: "",
     products: [
       {
         _id: 0,
@@ -656,16 +657,30 @@ class App extends Component {
   };
 
   //in cdm get user cart
-
-  addToCart = (item, quantity) => {
-    let cart = [...this.state.cart, { item, quantity }];
+  componentDidMount() {
+    let cartIcon = localStorage.getItem('cart') ? '/cart_full.png' : '/cart_empty.png' 
+    this.setState({cartIcon})
+  }
+  addToCart = (item, quantity) => {    
+    // console.log(item, quantity);
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    cart = cart ? cart : [];
+    cart.push({item, quantity});
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    this.setState({cartIcon: "/cart_full.png"});
     console.log(cart);
   };
+
+    removeFromCart = () => {
+      localStorage.removeItem('cart');
+      this.setState({cartIcon: "/cart_empty.png"})
+    }
 
   render() {
     return (
       <div>
-        <NavigationBar cart={this.state.cart} total={this.state.total} />
+        <NavigationBar cart={this.state.cart} total={this.state.total} cartIcon={this.state.cartIcon} />
         <Switch>
           <Route
             path="/banners"
@@ -719,7 +734,8 @@ class App extends Component {
               <ProductDetails
                 {...props}
                 products={this.state.products}
-                onClick={this.addToCart}
+                addToCart={this.addToCart}
+                removeFromCart={this.removeFromCart}
               />
             )}
           />

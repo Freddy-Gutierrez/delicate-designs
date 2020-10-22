@@ -28,6 +28,7 @@ class ProductDetails extends Component {
     this.setState({ quantity });
   };
 
+
   render() {
     const { product, selectedSrc } = this.state;
     const option1 = "/option1.jpg";
@@ -76,11 +77,13 @@ class ProductDetails extends Component {
                   className="add-cart-button"
                   disabled={this.state.quantity === 0 ? true : false}
                   onClick={(item, quantity) =>
-                    this.props.onClick(product, this.state.quantity)
+                    this.props.addToCart(product, this.state.quantity)
                   }
                 >
                   ADD TO CART
                 </button>
+
+                <button onClick={this.props.removeFromCart}>remove items</button>
               </div>
             </div>
           </div>
