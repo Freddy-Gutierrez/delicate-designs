@@ -6,6 +6,53 @@
   margin: auto;
 }
 
+.shipping-info {
+  display: block;
+  width: 60%;
+  height: 90vh;
+  border: solid lightgrey;
+}
+
+.title {
+  margin-left: 2%;
+}
+
+.shipping-element {
+  margin-top: 3%;
+  margin-left: 2%;
+}
+.couplet {
+  display: flex;
+  margin-top: 3%;
+  margin-left: 2%;
+}
+.checkbox-text {
+  color: grey;
+  font-size: small;
+}
+
+.continue-to-payment-button {
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+  background-color: white;
+  width: 50%;
+  margin-left: 2%;
+  margin-top: 3%;
+  border: solid black;
+  border-radius: 8px;
+}
+
+.continue-to-payment-button:hover {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  background-color: black;
+  width: 50%;
+  margin-left: 2%;
+  margin-top: 3%;
+}
+
 .header {
   display: flex;
   flex-basis: 100%;
@@ -21,12 +68,13 @@
 
 .cart-items {
   display: block;
-  width: 100%;
+  width: 40%;
+  height: 40vh;
   border: solid black;
 }
 .cart-img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin-right: 5%;
 }
 
