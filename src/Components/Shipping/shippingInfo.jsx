@@ -1,5 +1,5 @@
 import React from 'react';
-import SelectStates from './../common/selectStates';
+import SelectStates from './selectStates';
 const ShippingInfo = () => {
     return ( 
         <div className="shipping-info">
