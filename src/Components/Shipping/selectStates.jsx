@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-const SelectStates = () => {
+import React from 'react';
+const SelectStates = (props) => {
     return ( 
-        <select name="state" id="state" style={{height: "30px"}}>
-            <option value="" selected="selected">Select a State</option>
+        <select onChange={props.onChange} name="state" id="state" style={{height: "30px"}}>
+            <option value="" defaultValue="selected">Select a State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>

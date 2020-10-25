@@ -9,7 +9,6 @@ class Products extends Component {
     // dynamically create a product for each product
     // img onClick redirect user to product detail page and pass product in state
     // clicking the navlink for reviews redirects user to reviews page and passes product
-    console.log(this.props.products);
     return (    
       <div className="product-container">
         {this.props.products.map((product) => {

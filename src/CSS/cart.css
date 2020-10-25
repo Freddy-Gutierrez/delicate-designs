@@ -8,7 +8,8 @@
 
 .shipping-info {
   display: block;
-  width: 60%;
+  margin-right: 5px;
+  width: 57%;
   height: 90vh;
   border: solid lightgrey;
 }
@@ -17,10 +18,16 @@
   margin-left: 2%;
 }
 
+.input {
+  width: 40%;
+  min-width: 150px;
+}
+
 .shipping-element {
   margin-top: 3%;
   margin-left: 2%;
 }
+
 .couplet {
   display: flex;
   margin-top: 3%;
@@ -38,7 +45,7 @@
   background-color: white;
   width: 50%;
   margin-left: 2%;
-  margin-top: 3%;
+  margin-top: 4%;
   border: solid black;
   border-radius: 8px;
 }
@@ -50,7 +57,7 @@
   background-color: black;
   width: 50%;
   margin-left: 2%;
-  margin-top: 3%;
+  margin-top: 4%;
 }
 
 .header {
@@ -63,14 +70,15 @@
   display: flex;
   flex-basis: 100%;
   justify-content: space-around;
-  border-bottom: solid black;
+  border-bottom: solid lightgrey;
 }
 
 .cart-items {
   display: block;
   width: 40%;
-  height: 40vh;
-  border: solid black;
+  max-height: 40vh;
+  overflow-y: scroll;
+  border: solid lightgrey;
 }
 .cart-img {
   width: 80px;
@@ -83,13 +91,17 @@
   flex-wrap: wrap;
 }
 
-.edit {
-  width: 80px;
-  margin-top: 25px;
-}
-
 .remove {
   width: 80px;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .total {

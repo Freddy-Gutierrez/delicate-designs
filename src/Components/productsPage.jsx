@@ -26,7 +26,6 @@ class ProductsPage extends Component {
         default:
           break;
       }
-      console.log(products)
       this.setState({products})
     }
   

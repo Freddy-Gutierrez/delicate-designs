@@ -21,23 +21,27 @@ class App extends Component {
 
   //in cdm get user cart
   componentDidMount() {
-    let cartIcon = localStorage.getItem('cart') ? '/cart_full.png' : '/cart_empty.png' 
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    let cartIcon = (cart && cart.length > 0) ? '/cart_full.png' : '/cart_empty.png';
     this.setState({cartIcon})
   }
+
   addToCart = (item, quantity) => {    
-    // console.log(item, quantity);
     let cart = JSON.parse(localStorage.getItem('cart'));
     cart = cart ? cart : [];
-    cart.push({item, quantity});
+    // check if product is already in cart, if so increment quantity but don't add item again
+    let duplicate = cart.find(product => {return product.item._id === item._id})
+    duplicate ? duplicate.quantity+=quantity : cart.push({item, quantity});    
+
     localStorage.setItem('cart', JSON.stringify(cart));
     
     this.setState({cartIcon: "/cart_full.png"});
     toast.success("Item added to cart");
   };
 
-    removeFromCart = () => {
-      localStorage.removeItem('cart');
-      this.setState({cartIcon: "/cart_empty.png"})
+    updateIcon = () => {
+      console.log('icon updated');
+      this.setState({cartIcon: "/cart_empty.png"});
     }
 
   render() {
@@ -84,7 +88,9 @@ class App extends Component {
           <Route
             path="/cart"
             render={(props) => (
-              <Cart               
+              <Cart
+                {...props}            
+                updateIcon={this.updateIcon}
               />
             )}
           />

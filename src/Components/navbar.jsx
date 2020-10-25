@@ -20,7 +20,7 @@ const NavigationBar = (props) => {
         </Nav>
       </Navbar.Collapse>
       <Navbar.Brand href="/cart">
-        <img src={props.cartIcon} className="cart-icon" />
+        <img src={props.cartIcon} alt="cart icon" className="cart-icon" />
       </Navbar.Brand>
     </Navbar>
   );
