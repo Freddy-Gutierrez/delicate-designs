@@ -11,9 +11,10 @@ import NavigationBar from "./Components/navbar";
 import Banners from "./Components/banners";
 import Home from "./Components/home";
 import ProductDetails from "./Components/productDetails";
-import Reviews from "./Components/reviews";
 import Cart from "./Components/cart";
 import ProductsPage from './Components/productsPage';
+import Pay from './Components/Shipping/pay';
+import Reviews from './Components/review/reviews';
 class App extends Component {
   state = {
     cartIcon: ""
@@ -105,6 +106,7 @@ class App extends Component {
               />
             )}
           />
+          <Route path="/pay" component={Pay} />
           <Route path="/reviews" component={Reviews} />
           <Route path="/" component={Home} />
         </Switch>

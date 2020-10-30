@@ -360,14 +360,26 @@
 
   .star-component {
     display: flex;
-    flex-basis: 100%;
+    width: 250%;
   }
 
   .progress {
     width: 60%;
     margin-top: 0.5em;
   }
-  /*  */
+
+  .star-reviews {
+    width: 20px;
+    background: none !important;
+    border: none;
+    padding: 0 !important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
   /* css for right column of page */
   .review-content {
@@ -376,7 +388,7 @@
     justify-content: space-between;
     padding-left: 2%;
     padding-right: 2%;
-    flex-basis: 100%;
+    flex-basis: 80%;
   }
 
   .review-button {

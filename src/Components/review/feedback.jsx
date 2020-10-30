@@ -1,5 +1,6 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
+
 const Feedback = (props) => {
   console.log(props.reviews);
   return (

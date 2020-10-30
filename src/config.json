@@ -1,4 +1,5 @@
 {
-    "productsUrl": "http://localhost:3900/api/products"
+    "productsURL": "http://localhost:3900/api/products",
+    "reviewsURL": "http://localhost:3900/api/reviews"
   }
   

@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
 const option0 = "/option0.jpg";
+const option1 = "/option1.jpg";
+const option2 = "/option2.jpg";
+const option3 = "/option3.jpg";
+const option4 = "/option4.jpg";
 
 class ProductDetails extends Component {
   
@@ -31,10 +35,7 @@ class ProductDetails extends Component {
 
   render() {
     const { product, selectedSrc } = this.state;
-    const option1 = "/option1.jpg";
-    const option2 = "/option2.jpg";
-    const option3 = "/option3.jpg";
-    const option4 = "/option4.jpg";
+    console.log(product);
     return (
       !this.state.product ? <div/> :
       <div>

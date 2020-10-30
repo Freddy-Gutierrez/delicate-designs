@@ -1,6 +1,6 @@
 import axios from 'axios';
 import config from "../config.json"
-let endpoint = config.productsUrl;
+let endpoint = config.productsURL;
 
 export function getBanners(productDirectory){
     return axios.get(endpoint+productDirectory).then(response => response.data)

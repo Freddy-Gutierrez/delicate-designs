@@ -5,11 +5,18 @@ import { NavLink } from "react-router-dom";
 const image = "/option0.jpg";
 class Products extends Component {
   state = {};
+
+  componentDidMount() {
+    
+
+  }
+
   render() {
     // dynamically create a product for each product
     // img onClick redirect user to product detail page and pass product in state
     // clicking the navlink for reviews redirects user to reviews page and passes product
-    return (    
+    console.log(this.props.products);
+    return (          
       <div className="product-container">
         {this.props.products.map((product) => {
           return (
@@ -34,10 +41,10 @@ class Products extends Component {
                   starDimension={"20px"}
                   starSpacing={"0px"}
                 />
-                {/* <NavLink
+                <NavLink
                   className="rating-text"
-                  to={{ pathname: "/reviews", state: { product: product } }}
-                >{`${product.reviews.length} reviews`}</NavLink> */}
+                  to={{ pathname: "/reviews", state: { productId: product._id, avgRating: product.avgRating } }}
+                >{`${product.totalReviews} reviews`}</NavLink>
               </div>
             </div>
           );
