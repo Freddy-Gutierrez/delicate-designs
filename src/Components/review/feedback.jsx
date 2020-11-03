@@ -1,8 +1,7 @@
 import React from "react";
 import StarRatings from "react-star-ratings";
 
-const Feedback = (props) => {
-  console.log(props.reviews);
+const Feedback = (props) => {  
   return (
     <div className="review-row">
       {props.reviews.map((review, index) => {
@@ -30,7 +29,7 @@ const Feedback = (props) => {
                 <p
                   className="helpful"
                   onClick={(_id) => props.onClick(review._id)}
-                >{`Helpful(${review.helpful})`}</p>
+                >{`Helpful(${review.helpful.length})`}</p>
               </div>
             </div>
           </div>

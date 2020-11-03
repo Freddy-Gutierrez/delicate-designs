@@ -15,6 +15,7 @@ import Cart from "./Components/cart";
 import ProductsPage from './Components/productsPage';
 import Pay from './Components/Shipping/pay';
 import Reviews from './Components/review/reviews';
+import Login from "./Components/auth/login";
 class App extends Component {
   state = {
     cartIcon: ""
@@ -106,6 +107,7 @@ class App extends Component {
               />
             )}
           />
+          <Route path="/login" component={Login} />
           <Route path="/pay" component={Pay} />
           <Route path="/reviews" component={Reviews} />
           <Route path="/" component={Home} />

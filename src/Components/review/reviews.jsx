@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import Select from "../common/select";
 import Feedback from "./feedback";
-import { getReviews, getFilteredReviews } from '../../services/reviewService';
+import { getReviews, getFilteredReviews, updateHelpful } from '../../services/reviewService';
 import ReviewStars from "./reviewStar";
 
 class Reviews extends Component {
@@ -11,18 +12,17 @@ class Reviews extends Component {
   async componentDidMount() {
     const { productId } = this.props.location.state;
     let productReview = await getReviews(productId);
+    console.log(productReview);
     let fiveStarReviews = await getFilteredReviews(productId, 5);
     let fourStarReviews = await getFilteredReviews(productId, 4);
     let threeStarReviews = await getFilteredReviews(productId, 3);
     let twoStarReviews = await getFilteredReviews(productId, 2);
     let oneStarReviews = await getFilteredReviews(productId, 1);
-    let displayedReviews = productReview[0].reviews;
+    let displayedReviews = productReview.reviews;
     this.setState({productReview, displayedReviews, fiveStarReviews, fourStarReviews, threeStarReviews, twoStarReviews, oneStarReviews});
   }
 
-  sortReviews = (option) => {
-    console.log(option);
-  };
+
 
   showReviews = (option) => {    
     const {fiveStarReviews, fourStarReviews, threeStarReviews, twoStarReviews, oneStarReviews} = this.state;
@@ -50,15 +50,21 @@ class Reviews extends Component {
     }    
   };
 
-  incrementHelpful = (_id) => {
-    // given id make call to update in db
-    console.log(_id);
+  sortReviews = (option) => {
+    console.log(option);
+  };
+
+  updateHelpful = async(reviewId) => {
+    let productReview = await updateHelpful(reviewId);
+    if (!productReview) return toast.error('Must be logged in to mark review as helpful');
+    let displayedReviews = productReview.reviews;
+    this.setState({productReview, displayedReviews});
+    
   };
 
   render() {
-    const {  productId, avgRating } = this.props.location.state;  
-    const {productReview, displayedReviews, fiveStarReviews, fourStarReviews, threeStarReviews, twoStarReviews, oneStarReviews} = this.state;
-    console.log(this.state.productReview);
+    const { avgRating } = this.props.location.state;  
+    const {productReview, displayedReviews, fiveStarReviews, fourStarReviews, threeStarReviews, twoStarReviews, oneStarReviews} = this.state;    
     return (
       productReview === null ? <div/> :
       <div className="review-container">
@@ -66,7 +72,7 @@ class Reviews extends Component {
           <h3>{`Overall rating ${avgRating}`}</h3>
           <div className="break"></div>
           <ReviewStars 
-            totalReviews={productReview[0].reviews.length}
+            totalReviews={productReview.reviews.length}
             fiveStars={fiveStarReviews.length}
             fourStars={fourStarReviews.length}
             threeStars={threeStarReviews.length}
@@ -101,9 +107,10 @@ class Reviews extends Component {
           </div>
           <Feedback
             reviews={displayedReviews}
-            onClick={this.incrementHelpful}
+            onClick={this.updateHelpful}
           />
         </div>
+        <ToastContainer position="bottom-center"/>
       </div>      
     );
   }
