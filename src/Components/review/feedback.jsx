@@ -8,7 +8,7 @@ const Feedback = (props) => {
         return (
           <div className="feedback-container" key={index}>
             <div className="review-row">
-              <h3>{review.username}</h3>
+              <h3>{review.name}</h3>
             </div>
             <div className="two-col">
               <p className="p-review">Rating</p>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import moment from 'moment';
 import Select from "../common/select";
 import Feedback from "./feedback";
 import { getReviews, getFilteredReviews, updateHelpful } from '../../services/reviewService';
@@ -28,7 +29,7 @@ class Reviews extends Component {
     const {fiveStarReviews, fourStarReviews, threeStarReviews, twoStarReviews, oneStarReviews} = this.state;
     switch(option){
       case "All Ratings":
-        this.setState({displayedReviews: this.state.productReview[0].reviews});
+        this.setState({displayedReviews: this.state.productReview.reviews});
         break;
       case "5 Stars":
         this.setState({displayedReviews: fiveStarReviews});
@@ -51,7 +52,18 @@ class Reviews extends Component {
   };
 
   sortReviews = (option) => {
-    console.log(option);
+    const { displayedReviews} = this.state;    
+    if (option === "Helpful"){
+      const sorted = displayedReviews.sort(
+        (a,b) => b.helpful.length - a.helpful.length
+      );
+      return this.setState({displayedReviews: sorted});      
+    }
+    const sorted = displayedReviews.sort(
+      (a,b) => moment(moment(b.date, "dddd, MMMM Do YYYY, h:mm:ss a").format()).diff(moment(a.date, "dddd, MMMM Do YYYY, h:mm:ss a").format())
+    );        
+    console.log(sorted);
+    this.setState({displayedReviews: sorted});
   };
 
   updateHelpful = async(reviewId) => {
