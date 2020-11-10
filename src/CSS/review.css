@@ -394,8 +394,11 @@
   .review-button {
     height: 50px;
     width: 200px;
+    padding-top: 10px;
     max-width: 200px;
     margin-top: 0.3em;
+    text-decoration: none !important;
+    text-align: center;
     background: white;
     color: black;
     font-weight: bold;

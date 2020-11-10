@@ -6,16 +6,10 @@ const image = "/option0.jpg";
 class Products extends Component {
   state = {};
 
-  componentDidMount() {
-    
-
-  }
-
   render() {
     // dynamically create a product for each product
     // img onClick redirect user to product detail page and pass product in state
     // clicking the navlink for reviews redirects user to reviews page and passes product
-    console.log(this.props.products);
     return (          
       <div className="product-container">
         {this.props.products.map((product) => {
@@ -43,7 +37,7 @@ class Products extends Component {
                 />
                 <NavLink
                   className="rating-text"
-                  to={{ pathname: "/reviews", state: { productId: product._id, avgRating: product.avgRating } }}
+                  to={`/reviews/${product._id}`}
                 >{`${product.totalReviews} reviews`}</NavLink>
               </div>
             </div>

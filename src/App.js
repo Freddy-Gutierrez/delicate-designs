@@ -16,6 +16,7 @@ import ProductsPage from './Components/productsPage';
 import Pay from './Components/Shipping/pay';
 import Reviews from './Components/review/reviews';
 import Login from "./Components/auth/login";
+import FeedbackForm from './Components/review/feedbackForm';
 class App extends Component {
   state = {
     cartIcon: ""
@@ -108,8 +109,9 @@ class App extends Component {
             )}
           />
           <Route path="/login" component={Login} />
+          <Route path="/feedback-form/:id" component={FeedbackForm} />
           <Route path="/pay" component={Pay} />
-          <Route path="/reviews" component={Reviews} />
+          <Route path="/reviews/:id" component={Reviews} />
           <Route path="/" component={Home} />
         </Switch>
         <ToastContainer position="bottom-center"/>

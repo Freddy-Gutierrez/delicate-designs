@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import {Link} from 'react-router-dom';
 import moment from 'moment';
 import Select from "../common/select";
 import Feedback from "./feedback";
@@ -11,9 +12,8 @@ class Reviews extends Component {
 
   
   async componentDidMount() {
-    const { productId } = this.props.location.state;
+    const { id: productId } = this.props.match.params;    
     let productReview = await getReviews(productId);
-    console.log(productReview);
     let fiveStarReviews = await getFilteredReviews(productId, 5);
     let fourStarReviews = await getFilteredReviews(productId, 4);
     let threeStarReviews = await getFilteredReviews(productId, 3);
@@ -75,13 +75,17 @@ class Reviews extends Component {
   };
 
   render() {
-    const { avgRating } = this.props.location.state;  
+    const { id: productId } = this.props.match.params;    
     const {productReview, displayedReviews, fiveStarReviews, fourStarReviews, threeStarReviews, twoStarReviews, oneStarReviews} = this.state;    
     return (
-      productReview === null ? <div/> :
+      productReview === null ? 
+      <div> 
+        <h3>Be the first to leave a review!</h3>
+        <Link to={`/feedback-form/${productId}`} className="review-button">Write a review</Link>
+      </div> :
       <div className="review-container">
         <div className="stars-container">
-          <h3>{`Overall rating ${avgRating}`}</h3>
+          <h3>{`Overall rating ${productReview.avgRating}`}</h3>
           <div className="break"></div>
           <ReviewStars 
             totalReviews={productReview.reviews.length}
@@ -96,7 +100,7 @@ class Reviews extends Component {
         <div className="review-content">
           <div className="review-row">
             <h1>All Reviews</h1>
-            <button className="review-button">Write a review</button>
+            <Link to={`/feedback-form/${productReview.productId}`} className="review-button">Write a review</Link>
           </div>
           <div className="review-row">
             <Select

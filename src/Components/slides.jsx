@@ -1,5 +1,16 @@
 import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
+
+const wmCup = "/tumblers/watermelon/option0.jpg";
+const stitchCup = "/tumblers/stitch/option0.jpg";
+const starwarsCup = "/tumblers/starwars/option0.jpg";
+const summerCup = "/tumblers/summer/option0.jpg";
+const fallPillow = "/pillows/fall/option0.jpg";
+const ghostPillow = "/pillows/ghost/option0.jpg";
+const witchPillow = "/pillows/witch/option0.jpg";
+const halloweenPillow = "/pillows/halloween/option0.jpg";
+
+
 class Slides extends Component {
   state = {};
   render() {
@@ -7,28 +18,28 @@ class Slides extends Component {
       <div>
         <Carousel className="carousel-container">
           <Carousel.Item>
-            <img className="carousel-img" src="/watermelon_cup.jpg" alt="Watermelon Cup" />
+            <img className="carousel-img" src={wmCup} alt="Watermelon Cup" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="carousel-img" src="/fall_pillow.jpg" alt="Fall Pillow" />
+            <img className="carousel-img" src={fallPillow} alt="Fall Pillow" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="carousel-img" src="/stitch_cup.jpg" alt="Stitch Cup" />
+            <img className="carousel-img" src={stitchCup} alt="Stitch Cup" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="carousel-img" src="/ghost_pillow.jpg" alt="Ghost Pillow" />
+            <img className="carousel-img" src={ghostPillow} alt="Ghost Pillow" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="carousel-img" src="/star_wars_cup.jpg" alt="Star Wars Cup" />
+            <img className="carousel-img" src={starwarsCup} alt="Star Wars Cup" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="carousel-img" src="/witch_pillow.jpg" alt="Witch Pillow" />
+            <img className="carousel-img" src={witchPillow} alt="Witch Pillow" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="carousel-img" src="/summer_cups.jpg" alt="Summer Cups" />
+            <img className="carousel-img" src={summerCup} alt="Summer Cups" />
           </Carousel.Item>
           <Carousel.Item>
-            <img className="carousel-img" src="/halloween_pillow.jpg" alt="Halloween Pillow" />
+            <img className="carousel-img" src={halloweenPillow} alt="Halloween Pillow" />
           </Carousel.Item>
         </Carousel>
       </div>
