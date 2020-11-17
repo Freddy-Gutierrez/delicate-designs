@@ -62,7 +62,6 @@ class Reviews extends Component {
     const sorted = displayedReviews.sort(
       (a,b) => moment(moment(b.date, "dddd, MMMM Do YYYY, h:mm:ss a").format()).diff(moment(a.date, "dddd, MMMM Do YYYY, h:mm:ss a").format())
     );        
-    console.log(sorted);
     this.setState({displayedReviews: sorted});
   };
 
@@ -79,8 +78,8 @@ class Reviews extends Component {
     const {productReview, displayedReviews, fiveStarReviews, fourStarReviews, threeStarReviews, twoStarReviews, oneStarReviews} = this.state;    
     return (
       productReview === null ? 
-      <div> 
-        <h3>Be the first to leave a review!</h3>
+      <div className="no-reviews"> 
+        <h1>Be the first to leave a review!</h1>
         <Link to={`/feedback-form/${productId}`} className="review-button">Write a review</Link>
       </div> :
       <div className="review-container">

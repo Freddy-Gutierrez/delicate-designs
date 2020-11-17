@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Products from "./products";
-import { getBanners, getPillows, getShirts, getTumblers, getToppers, getTotes } from './../services/productsService';
+import { getBanners, getPillows, getShirts, getTumblers, getToppers, getTotes } from '../../services/productsService';
 
 class ProductsPage extends Component {
     state = {products: null};
@@ -33,7 +33,7 @@ class ProductsPage extends Component {
       return (
         this.state.products === null ? <div/> : 
         <div>
-          <h1>{this.props.title}</h1>
+          <h1 style={{textAlign: "center", paddingBottom: "10px"}}>{this.props.title}</h1>
           <Products products={this.state.products} {...this.props} />
         </div>
       );

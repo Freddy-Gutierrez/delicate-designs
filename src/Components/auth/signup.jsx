@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { login } from "../../services/auth";
-import { Link } from "react-router-dom";
+import { getCurrentUser,signup } from "../../services/auth";
+import { Link, Redirect } from "react-router-dom";
 
-class Login extends Component {
+class Signup extends Component {
   state = {
     data: { username: "", password: "" },
   };
@@ -16,26 +16,26 @@ class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { username, password } = this.state.data;
-    login(username, password);
+    signup(username, password);
   };
 
   render() {
-    // if (getCurrentUser()) return <Redirect to="/candidates" />;
+    if (getCurrentUser()) return <Redirect to="/" />;
     return (
       <div>
         <div className="login-container">
           <span>
-            <h3>Login</h3>
+            <h3>Sign Up</h3>
             <form onSubmit={this.handleSubmit}>
               <p style={{marginBottom: "0px"}}>Username</p>
               <input type="text" style={{marginBottom: "5px"}} name="username" onChange={this.handleChange} />
               <p style={{marginBottom: "0px"}}>Password</p>
               <input type="password" style={{marginBottom: "5px"}} name="password" onChange={this.handleChange}/>
               <p>
-                <button type="submit">Login</button>
+                <button type="submit">Sign Up</button>
               </p>
               <p>
-                Don't have an account?<Link to="/signup">Sign Up</Link>
+                Already have an account?<Link to="/login">Login</Link>
               </p>
             </form>            
           </span>
@@ -45,4 +45,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Signup;

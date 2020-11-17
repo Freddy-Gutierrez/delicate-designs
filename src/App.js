@@ -1,32 +1,43 @@
 import React, { Component } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import { Switch, Route } from "react-router-dom";
+import NavigationBar from "./Components/home/navbar";
+import Home from "./Components/home/home";
+import ProductDetails from "./Components/products/productDetails";
+import Cart from "./Components/products/cart";
+import ProductsPage from './Components/products/productsPage';
+import Pay from './Components/Shipping/pay';
+import Reviews from './Components/review/reviews';
+import Login from "./Components/auth/login";
+import FeedbackForm from './Components/review/feedbackForm';
+import Signup from './Components/auth/signup';
+import {getCurrentUser, logout} from './services/auth';
+import {NavLink} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import "./CSS/layout.css";
 import "./CSS/carousel.css";
 import "./CSS/review.css";
 import "./CSS/productDetails.css";
 import "./CSS/cart.css";
-import { Switch, Route } from "react-router-dom";
-import NavigationBar from "./Components/navbar";
-import Banners from "./Components/banners";
-import Home from "./Components/home";
-import ProductDetails from "./Components/productDetails";
-import Cart from "./Components/cart";
-import ProductsPage from './Components/productsPage';
-import Pay from './Components/Shipping/pay';
-import Reviews from './Components/review/reviews';
-import Login from "./Components/auth/login";
-import FeedbackForm from './Components/review/feedbackForm';
+import "./CSS/login.css";
+
 class App extends Component {
-  state = {
+  state = { 
+    user: null, 
     cartIcon: ""
   };
 
   //in cdm get user cart
   componentDidMount() {
+    const user = getCurrentUser();
     let cart = JSON.parse(localStorage.getItem('cart'));
     let cartIcon = (cart && cart.length > 0) ? '/cart_full.png' : '/cart_empty.png';
-    this.setState({cartIcon})
+    this.setState({user, cartIcon})
+  }
+
+  signout = () => {
+    logout();
+    this.setState({user: null, cartIcon: "/cart_empty.png"});
   }
 
   addToCart = (item, quantity) => {    
@@ -42,20 +53,19 @@ class App extends Component {
     toast.success("Item added to cart");
   };
 
-    updateIcon = () => {
-      console.log('icon updated');
-      this.setState({cartIcon: "/cart_empty.png"});
-    }
+  updateIcon = () => {
+    this.setState({cartIcon: "/cart_empty.png"});
+  }
 
   render() {
     return (
       <div>
-        <NavigationBar cart={this.state.cart} total={this.state.total} cartIcon={this.state.cartIcon} />
+        <NavigationBar cartIcon={this.state.cartIcon} />
         <Switch>
           <Route
             path="/banners"
             render={(props) => (
-              <Banners {...props} products={this.state.products} />
+              <ProductsPage {...props} productDirectory={"/banners"} title={"Banners"} />
             )}
           />
           <Route
@@ -109,11 +119,18 @@ class App extends Component {
             )}
           />
           <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
           <Route path="/feedback-form/:id" component={FeedbackForm} />
           <Route path="/pay" component={Pay} />
           <Route path="/reviews/:id" component={Reviews} />
           <Route path="/" component={Home} />
         </Switch>
+        {getCurrentUser() ?             
+          <div className="display-user">
+            <h4 className="username">{`Welcome ${getCurrentUser().username}!`}</h4>
+            <button onClick={this.signout} className="remove" style={{marginLeft:"150px"}} >Signout</button>
+          </div> : <NavLink className="display-user" to="/login">Login</NavLink>
+        }
         <ToastContainer position="bottom-center"/>
       </div>
     );

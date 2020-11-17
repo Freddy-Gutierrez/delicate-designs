@@ -2,15 +2,17 @@ import React, { Component } from "react";
 
 const option0 = "/option0.jpg";
 const option1 = "/option1.jpg";
-const option2 = "/option2.jpg";
-const option3 = "/option3.jpg";
-const option4 = "/option4.jpg";
+
+// const option2 = "/option2.jpg";
+// const option3 = "/option3.jpg";
+// const option4 = "/option4.jpg";
 
 class ProductDetails extends Component {
   
   state = { 
     product: null,
     selectedSrc: null,
+    selectedId: 0,
     quantity: 1 };
 
   componentDidMount() {
@@ -18,8 +20,9 @@ class ProductDetails extends Component {
     this.setState({product, selectedSrc: product.src + option0})
   }
 
-  updateImage = (e) => {
-    this.setState({selectedSrc: e.target.src})
+  updateImage = (e) => {        
+    this.setState({selectedSrc: e.target.src, selectedId: e.target.id})
+    console.log(e.target.id);
   }
 
   incrementQuantity = () => {
@@ -34,19 +37,15 @@ class ProductDetails extends Component {
 
 
   render() {
-    const { product, selectedSrc } = this.state;
-    console.log(product);
+    const { product, selectedSrc } = this.state;    
     return (
       !this.state.product ? <div/> :
       <div>
-        <h1>Product details</h1>
+        <h1 style={{textAlign: "center", paddingBottom: "10px"}}>Product details</h1>
         <div className="product-detail-container">
           <div className="product-img-options">
-            <img src={product.src + option0} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)}/>
-            <img src={product.src + option1} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} />
-            <img src={product.src + option2} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} />
-            <img src={product.src + option3} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} />
-            <img src={product.src + option4} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} />
+            <img id={0} src={product.src + option0} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} style={this.state.selectedId == 0 ? {border: "solid black"} : {border: "none"}} />
+            <img id={1} src={product.src + option1} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} style={this.state.selectedId == 1 ? {border: "solid black"} : {border: "none"}} />            
           </div>
           <img
             src={selectedSrc}
@@ -77,14 +76,10 @@ class ProductDetails extends Component {
                 <button
                   className="add-cart-button"
                   disabled={this.state.quantity === 0 ? true : false}
-                  onClick={(item, quantity) =>
-                    this.props.addToCart(product, this.state.quantity)
-                  }
+                  onClick={() => this.props.addToCart(product, this.state.quantity)}
                 >
                   ADD TO CART
                 </button>
-
-                <button onClick={this.props.removeFromCart}>remove items</button>
               </div>
             </div>
           </div>

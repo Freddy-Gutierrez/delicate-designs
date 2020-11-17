@@ -1,18 +1,16 @@
-import axios from 'axios';
-import config from "../config.json"
+import http from './http';
 import { toast } from "react-toastify";
 import { getJwt } from "./auth";
 
-let endpoint = config.reviewsURL;
 const axiosConfig = { headers: { "x-auth-token": getJwt() } };
 
 
 export function getReviews(productId){
-    return axios.get(endpoint + "/" + productId).then((response) => response.data);
+    return http.get("/reviews/" + productId).then((response) => response.data);
 }
 
 export function addReview(productId, rating, review){
-    return axios.post(endpoint + "/" + productId,
+    return http.post("/reviews/" + productId,
         {rating, review},
         axiosConfig
         )
@@ -21,11 +19,11 @@ export function addReview(productId, rating, review){
 }
 
 export function getFilteredReviews(productId, rating){
-    return axios.get(endpoint+ "/" + productId + "/" + rating).then((response) => response.data);
+    return http.get("/reviews/" + productId + "/" + rating).then((response) => response.data);
 }
 
 export function updateHelpful(reviewId){
-    return axios.put(endpoint + "/helpful/" + reviewId, null, axiosConfig)
+    return http.put("/reviews/helpful/" + reviewId, null, axiosConfig)
         .then((response) => response.data)
         .catch(error => null);
 }

@@ -1,0 +1,13 @@
+.login-container {
+  border: solid black;
+  margin: auto;
+  text-align: center;
+  width: 20%;
+}
+
+.navbar-username {
+  font-size: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding-right: 40%;
+}

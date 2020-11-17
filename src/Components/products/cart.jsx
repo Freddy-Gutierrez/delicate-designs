@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Joi from 'joi-browser';
 import { toast } from 'react-toastify';
-import OrderSummary from "./Shipping/orderSummary";
-import ShippingInfo from './Shipping/shippingInfo';
+import OrderSummary from "../Shipping/orderSummary";
+import ShippingInfo from '../Shipping/shippingInfo';
 
 class Cart extends Component {
 

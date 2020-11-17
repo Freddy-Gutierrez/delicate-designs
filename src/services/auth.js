@@ -1,24 +1,34 @@
-import axios from 'axios';
 import http from "./http";
-import config from "../config.json";
 import jwtDecode from "jwt-decode";
 import { toast } from 'react-toastify';
 
-const endpoint = config.usersURL;
 const tokenKey = "token";
 
-// http.setJwt(getJwt());
-
 export async function login(username, password) {
-  await axios
-    .post(endpoint + "/login", {
+  await http
+    .post("/users/login", {
+      username,
+      password,
+    })
+    .then((res) => 
+    {
+      localStorage.setItem(tokenKey, res.headers["x-auth-token"]);
+      window.location = "/"
+    })
+    .catch((error) => toast.error(error.response.data));
+}
+
+export async function signup(username, password) {
+  await http
+    .post("/users/signup", {
       username,
       password,
     })
     .then((res) => {
-      localStorage.setItem(tokenKey, res.headers["x-auth-token"]);      
+      localStorage.setItem(tokenKey, res.headers["x-auth-token"]);
+      window.location = "/";
     })
-    .catch((error) => toast.error(error.response.data));
+    .catch((err) => toast.error(err.response.data));
 }
 
 export function loginWithJwt(jwt) {
@@ -27,6 +37,7 @@ export function loginWithJwt(jwt) {
 
 export function logout() {
   localStorage.removeItem(tokenKey);
+  localStorage.removeItem('cart');
 }
 
 export function getJwt() {
