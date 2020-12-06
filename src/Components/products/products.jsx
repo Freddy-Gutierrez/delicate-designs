@@ -32,6 +32,7 @@ class Products extends Component {
                 <StarRatings
                   rating={product.avgRating}
                   starRatedColor="rgb(255,223,0)"
+                  starEmptyColor="rgb(109, 122, 130)"
                   starDimension={"20px"}
                   starSpacing={"0px"}
                 />

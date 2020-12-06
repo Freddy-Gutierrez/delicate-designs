@@ -9,6 +9,7 @@ const ReviewStars = (props) => {
                 <StarRatings
                   rating={5}
                   starRatedColor="rgb(255,223,0)"
+                  starEmptyColor="rgb(109, 122, 130)"
                   starDimension={"20px"}
                   starSpacing={"0px"}
                 />
@@ -19,6 +20,7 @@ const ReviewStars = (props) => {
                 <StarRatings
                   rating={4}
                   starRatedColor="rgb(255,223,0)"
+                  starEmptyColor="rgb(109, 122, 130)"
                   starDimension={"20px"}
                   starSpacing={"0px"}
                 />
@@ -29,6 +31,7 @@ const ReviewStars = (props) => {
                 <StarRatings
                   rating={3}
                   starRatedColor="rgb(255,223,0)"
+                  starEmptyColor="rgb(109, 122, 130)"
                   starDimension={"20px"}
                   starSpacing={"0px"}
                 />
@@ -39,6 +42,7 @@ const ReviewStars = (props) => {
                 <StarRatings
                   rating={2}
                   starRatedColor="rgb(255,223,0)"
+                  starEmptyColor="rgb(109, 122, 130)"
                   starDimension={"20px"}
                   starSpacing={"0px"}
                 />
@@ -49,6 +53,7 @@ const ReviewStars = (props) => {
                 <StarRatings
                   rating={1}
                   starRatedColor="rgb(255,223,0)"
+                  starEmptyColor="rgb(109, 122, 130)"
                   starDimension={"20px"}
                   starSpacing={"0px"}
                 />

@@ -18,6 +18,7 @@ const Feedback = (props) => {
               <StarRatings
                 rating={review.rating}
                 starRatedColor="rgb(255,223,0)"
+                starEmptyColor="rgb(109, 122, 130)"
                 starDimension={"15px"}
                 starSpacing={"0px"}
               />

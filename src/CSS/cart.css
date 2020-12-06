@@ -11,7 +11,7 @@
   margin-right: 5px;
   width: 57%;
   height: 90vh;
-  border: solid lightgrey;
+  border: solid black;
 }
 
 .title {
@@ -34,7 +34,7 @@
   margin-left: 2%;
 }
 .checkbox-text {
-  color: grey;
+  color: black;
   font-size: small;
 }
 
@@ -70,7 +70,7 @@
   display: flex;
   flex-basis: 100%;
   justify-content: space-around;
-  border-bottom: solid lightgrey;
+  border-bottom: solid black;
 }
 
 .cart-items {
@@ -78,7 +78,8 @@
   width: 40%;
   max-height: 40vh;
   overflow-y: scroll;
-  border: solid lightgrey;
+  border: solid black;
+  overflow: auto;
 }
 .cart-img {
   width: 80px;

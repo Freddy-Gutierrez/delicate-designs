@@ -59,7 +59,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="background">
         <NavigationBar cartIcon={this.state.cartIcon} />
         <Switch>
           <Route
