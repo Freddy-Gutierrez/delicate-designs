@@ -20,6 +20,7 @@ import "./CSS/review.css";
 import "./CSS/productDetails.css";
 import "./CSS/cart.css";
 import "./CSS/login.css";
+import "./CSS/payment.css";
 
 class App extends Component {
   state = { 

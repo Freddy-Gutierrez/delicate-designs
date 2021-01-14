@@ -1,0 +1,58 @@
+.payment-container {
+  display: inline-block;
+  border: solid black;
+}
+
+.payment_types {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-logo {
+  border: white;
+  border-radius: 10px;
+  height: 100px;
+  width: 150px;
+  margin-right: 10px;
+}
+
+.payment-fields {
+  padding-top: 10px;
+  display: flex;
+  margin: auto;
+  width: 60%;
+}
+
+.input-parent {
+  padding-top: 10px;
+  margin: auto;
+  width: 60%;
+}
+
+.card-number {
+  width: 100%;
+  border: solid 1px grey;
+  border-radius: 5px;
+  padding-left: 30px;
+}
+
+.card-name {
+  width: 90%;
+  border: solid 1px grey;
+  border-radius: 5px;
+  padding-left: 30px;
+}
+
+.card-date {
+  width: 90%;
+  border: solid 1px grey;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.card-cvv {
+  width: 90%;
+  border: solid 1px grey;
+  border-radius: 5px;
+  text-align: center;
+}

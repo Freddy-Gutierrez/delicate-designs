@@ -50,9 +50,6 @@ const ShippingInfo = (props) => {
                     <input className="input" type="text" name="phone" onChange={onChange} required={true} />
                 </div>  
                 <input className="continue-to-payment-button" type="submit" value="Continue to Payment Information" />
-                {/* <button className="continue-to-payment-button" onSubmit={goToPayment}>
-                    Continue to Payment Information
-                </button> */}
             </form>
         </div>
      );
