@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
 
 const wmCup = "/tumblers/watermelon/option0.jpg";
-const angelsCup = "/tumblers/angels/option0.jpg";
+const badbunnyCup = "/tumblers/badbunny/option0.jpg";
 const dodgersCup = "/tumblers/dodgers/option0.jpg";
 const hulkCup = "/tumblers/hulk/option0.jpg";
 const fallPillow = "/pillows/fall/option0.jpg";
@@ -15,33 +15,33 @@ class Slides extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <Carousel className="carousel-container">
-          <Carousel.Item>
-            <img className="carousel-img" src={wmCup} alt="Watermelon Cup" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="carousel-img" src={fallPillow} alt="Fall Pillow" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="carousel-img" src={angelsCup} alt="Angel Cup" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="carousel-img" src={ghostPillow} alt="Ghost Pillow" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="carousel-img" src={dodgersCup} alt="Dodgers Cup" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="carousel-img" src={witchPillow} alt="Witch Pillow" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="carousel-img" src={hulkCup} alt="Hulk Cup" />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img className="carousel-img" src={halloweenPillow} alt="Halloween Pillow" />
-          </Carousel.Item>
-        </Carousel>
+      <div className="carousel-container">        
+          <Carousel>
+            <Carousel.Item>
+              <img className="carousel-img" src={wmCup} alt="Watermelon Cup" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="carousel-img" src={fallPillow} alt="Fall Pillow" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="carousel-img" src={badbunnyCup} alt="Bad Bunny Cup" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="carousel-img" src={ghostPillow} alt="Ghost Pillow" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="carousel-img" src={dodgersCup} alt="Dodgers Cup" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="carousel-img" src={witchPillow} alt="Witch Pillow" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="carousel-img" src={hulkCup} alt="Hulk Cup" />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="carousel-img" src={halloweenPillow} alt="Halloween Pillow" />
+            </Carousel.Item>
+          </Carousel>                   
       </div>
     );
   }

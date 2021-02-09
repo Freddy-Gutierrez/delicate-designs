@@ -21,6 +21,8 @@ import "./CSS/productDetails.css";
 import "./CSS/cart.css";
 import "./CSS/login.css";
 import "./CSS/payment.css";
+import "./CSS/nav.css";
+import "./CSS/product.css";
 
 class App extends Component {
   state = { 

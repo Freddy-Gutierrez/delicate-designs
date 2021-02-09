@@ -4,7 +4,7 @@ class Home extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className="flex-block">
         <Slides />
       </div>
     );

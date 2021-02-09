@@ -1,5 +1,4 @@
 import React from "react";
-import {getCurrentUser} from "../../services/auth";
 import { Nav, Navbar } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
 
@@ -8,16 +7,16 @@ const NavigationBar = (props) => {
 
   return (
     <Navbar expand="lg">
-      <Navbar.Brand href="/"><img src="/ddlogo.jpg"  className="ddlogo" alt="delicate design logo"/> </Navbar.Brand>
+      <Navbar.Brand href="/"><img  className="ddlogo" src="/ddlogo.jpg" alt="delicate design logo"/> </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav activeKey={pathname}>
-          <Nav.Link href="/tumblers">Tumblers</Nav.Link>
-          <Nav.Link href="/tumblers" >Banners</Nav.Link>
-          <Nav.Link href="/tumblers">Pillows</Nav.Link>
-          <Nav.Link href="/tumblers">Shirts</Nav.Link>
-          <Nav.Link href="/tumblers">Toppers</Nav.Link>
-          <Nav.Link href="/tumblers">Totes</Nav.Link>
+          <Nav.Link className="nav-items" href="/tumblers">Tumblers</Nav.Link>
+          <Nav.Link className="nav-items" href="/tumblers" >Banners</Nav.Link>
+          <Nav.Link className="nav-items" href="/tumblers">Pillows</Nav.Link>
+          <Nav.Link className="nav-items" href="/tumblers">Shirts</Nav.Link>
+          <Nav.Link className="nav-items" href="/tumblers">Toppers</Nav.Link>
+          <Nav.Link className="nav-items" href="/tumblers">Totes</Nav.Link>
         </Nav>
       </Navbar.Collapse>  
       <Navbar.Brand href="/cart">

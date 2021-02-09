@@ -1,54 +1,30 @@
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-  .carousel-container {
-    border: solid black;
-    background-color: black;
-  }
+.carousel-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: #000;
+  width: 95vw;
+  height: 65vh;
+  overflow: hidden;
+  margin-bottom: 10%;
+}
 
-  .carousel-img {
-    width: 100vw;
-    height: 90vh;
-  }
+.carousel-img {
+  width: 100vw;
+  height: 65vh;
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .carousel-container {
-    border: solid black;
-    background-color: black;
-  }
-
   .carousel-img {
-    margin-left: 10%;
-    width: 80vw;
-    height: 90vh;
+    max-width: 750px;
   }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .carousel-container {
-    border: solid black;
-    background-color: black;
-  }
-
-  .carousel-img {
-    margin-left: 25%;
-    width: 50vw;
-    height: 90vh;
-  }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-  .carousel-container {
-    border: solid black;
-    background-color: black;
-  }
-
-  .carousel-img {
-    margin-left: 25%;
-    width: 50vw;
-    height: 90vh;
+    margin-bottom: 5%;
   }
 }
