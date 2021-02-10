@@ -12,7 +12,6 @@ import Login from "./Components/auth/login";
 import FeedbackForm from './Components/review/feedbackForm';
 import Signup from './Components/auth/signup';
 import {getCurrentUser, logout} from './services/auth';
-import {NavLink} from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import "./CSS/layout.css";
 import "./CSS/carousel.css";
@@ -63,7 +62,7 @@ class App extends Component {
   render() {
     return (
       <div className="background">
-        <NavigationBar cartIcon={this.state.cartIcon} />
+        <NavigationBar cartIcon={this.state.cartIcon} signout={this.signout}/>
         <Switch>
           <Route
             path="/banners"
@@ -128,12 +127,6 @@ class App extends Component {
           <Route path="/reviews/:id" component={Reviews} />
           <Route path="/" component={Home} />
         </Switch>
-        {getCurrentUser() ?             
-          <div className="display-user">
-            <h4 className="username">{`Welcome ${getCurrentUser().username}!`}</h4>
-            <button onClick={this.signout} className="remove" style={{marginLeft:"150px"}} >Signout</button>
-          </div> : <NavLink className="display-user" to="/login">Login</NavLink>
-        }
         <ToastContainer position="bottom-center"/>
       </div>
     );
