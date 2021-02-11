@@ -42,7 +42,8 @@ class App extends Component {
     this.setState({user: null, cartIcon: "/cart_empty.png"});
   }
 
-  addToCart = (item, quantity) => {    
+  addToCart = (item, quantity) => {          
+    // console.log(item,quantity);
     let cart = JSON.parse(localStorage.getItem('cart'));
     cart = cart ? cart : [];
     // check if product is already in cart, if so increment quantity but don't add item again

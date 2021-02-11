@@ -13,7 +13,7 @@ class ProductDetails extends Component {
     product: null,
     selectedSrc: null,
     selectedId: 0,
-    quantity: 1 };
+    quantity: 0 };
 
   componentDidMount() {
     const { product } = this.props.location.state;
@@ -25,68 +25,52 @@ class ProductDetails extends Component {
     console.log(e.target.id);
   }
 
-  incrementQuantity = () => {
-    let quantity = this.state.quantity + 1;
-    this.setState({ quantity });
-  };
+  handleChange = ({ currentTarget: input }) => {
+    let quantity = input.value;
+    this.setState({quantity});
+  }
 
-  decrementQuantity = () => {
-    let quantity = this.state.quantity - 1;
-    this.setState({ quantity });
-  };
+  // incrementQuantity = () => {
+  //   let quantity = this.state.quantity + 1;
+  //   this.setState({ quantity });
+  // };
+
+  // decrementQuantity = () => {
+  //   let quantity = this.state.quantity - 1;
+  //   this.setState({ quantity });
+  // };
 
 
   render() {
-    const { product, selectedSrc } = this.state;    
+    const { product, selectedSrc, quantity } = this.state;  
+    console.log(product);
     return (
-      !this.state.product ? <div/> :
-      <div>
-        <h1 style={{textAlign: "center", paddingBottom: "10px"}}>Product details</h1>
-        <div className="product-detail-container">
-          <div className="product-img-options">
-            <img id={0} src={product.src + option0} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} style={this.state.selectedId == 0 ? {border: "solid black"} : {border: "none"}} />
-            <img id={1} src={product.src + option1} alt={product.alt} className="img-preview" onClick={(e) => this.updateImage(e)} style={this.state.selectedId == 1 ? {border: "solid black"} : {border: "none"}} />            
-          </div>
-          <img
-            src={selectedSrc}
-            alt={product.alt}
-            className="product-detail-img"
-          />
-          <div>
-            <h2 className="title">{product.title}</h2>
-            <p className="description">{product.description}</p>
-            <div className="add-to-cart-container">
-              <div className="quantity-container">
-                <button
-                  className="increment-button"
-                  onClick={this.decrementQuantity}
-                  disabled={this.state.quantity === 0 ? true : false}
-                >
-                  -
-                </button>
-                <div className="increment-text">{this.state.quantity}</div>
-                <button
-                  className="increment-button"
-                  onClick={this.incrementQuantity}
-                >
-                  +
-                </button>
-              </div>
-              <div>
-                <button
-                  className="add-cart-button"
-                  disabled={this.state.quantity === 0 ? true : false}
-                  onClick={() => this.props.addToCart(product, this.state.quantity)}
-                >
-                  ADD TO CART
-                </button>
-              </div>
+        !this.state.product ? <div/> :
+        <div>
+            <h1 className="page-title">Product details</h1>
+            <div className="grid grid-cols-3 details">
+            <div className="details__image__options">
+                <img id={0} src={product.src + option0} alt={product.alt} className="details__preview" onClick={(e) => this.updateImage(e)} style={this.state.selectedId == 0 ? {border: "2px solid black"} : {border: "none"}} />
+                <img id={1} src={product.src + option1} alt={product.alt} className="details__preview" onClick={(e) => this.updateImage(e)} style={this.state.selectedId == 1 ? {border: "2px solid black"} : {border: "none"}} />
+            </div>
+            <img className="details__main__image" src={selectedSrc} alt={product.alt} />
+            <div>
+              <h2 className="details__title">{product.title}</h2>
+              <p className="details__description">{product.description}</p>
+            </div>
+            <div>
+              <label className="label" htmlFor="quantity">Quantity</label>
+              <input type="number" id="quantity" min="0" max="100" onChange={this.handleChange}/>
+              <button 
+                className="custom-btn custom-btn-blue"
+                onClick={() => this.props.addToCart(product, parseInt(quantity))}
+                disabled={quantity > 0 ? false : true}
+              >ADD TO CART</button>
             </div>
           </div>
         </div>
-      </div>
-    );
-  }
-}
+            );
+          }
+        }
 
 export default ProductDetails;

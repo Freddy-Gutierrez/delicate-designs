@@ -1,4 +1,41 @@
-.product-detail-img {
+.details {
+  text-align: center;
+  font-size: 1.3rem;
+  gap: 3%;
+}
+
+.details__main__image {
+  width: 90%;
+  margin-top: 1%;
+  border-radius: 10px;
+  order: -1;
+}
+
+.details__image__options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-items: start;
+}
+
+.details__preview {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  margin-right: 10%;
+}
+
+.details__title {
+  font-size: 3rem;
+  margin-top: -1rem;
+}
+
+.details__description {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/* .product-detail-img {
   width: 150%;
   height: 75vh;
 }
@@ -82,20 +119,4 @@
   font-size: large;
   margin-bottom: 2em;
   margin-left: 1.4em;
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+} */

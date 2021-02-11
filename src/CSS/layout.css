@@ -2,6 +2,47 @@ html {
   font-size: 62.5%;
 }
 
+label {
+  font-size: 2rem;
+  padding-right: 1rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  height: 3rem;
+  transition: border 0.15s, box-shadow 0.15s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: 0;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 4px #b9d3fa;
+}
+
+.custom-btn {
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 0.4rem 1rem;
+  margin-left: 1rem;
+  transition: transform 0.5s ease-in, background-color 0.3s ease-in;
+}
+
+.custom-btn:hover {
+  transform: scale(1.1);
+  background-color: rgb(107, 240, 107);
+}
+
+.custom-btn-blue {
+  background-color: rgb(241, 241, 241);
+}
+
 .flex-block {
   display: flex;
   width: 100%;
@@ -18,7 +59,7 @@ html {
 
 .page-title {
   text-align: center;
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 
@@ -46,4 +87,13 @@ html {
   font-size: large;
   font-weight: bold;
   width: 25%;
+}
+
+.grid {
+  display: grid;
+  justify-items: center;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
 }
