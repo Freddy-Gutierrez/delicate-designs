@@ -26,6 +26,7 @@ input[type="number"]:focus {
 
 .custom-btn {
   border: none;
+  color: #333;
   font-size: 1.5rem;
   font-weight: 500;
   border-radius: 10px;
@@ -37,6 +38,10 @@ input[type="number"]:focus {
 .custom-btn:hover {
   transform: scale(1.1);
   background-color: rgb(107, 240, 107);
+}
+
+.custom-btn:focus {
+  outline: none;
 }
 
 .custom-btn-blue {
@@ -59,7 +64,7 @@ input[type="number"]:focus {
 
 .page-title {
   text-align: center;
-  font-size: 3.5rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
 }
 
@@ -96,4 +101,14 @@ input[type="number"]:focus {
 
 .grid-cols-3 {
   grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+}
+
+@media (min-width: 775px) {
+  label {
+    font-size: 2.5rem;
+  }
+
+  .custom-btn {
+    font-size: 1.5rem;
+  }
 }

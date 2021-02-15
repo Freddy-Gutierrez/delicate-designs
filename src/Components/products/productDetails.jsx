@@ -46,7 +46,7 @@ class ProductDetails extends Component {
     console.log(product);
     return (
         !this.state.product ? <div/> :
-        <div>
+        <div className="container">
             <h1 className="page-title">Product details</h1>
             <div className="grid grid-cols-3 details">
             <div className="details__image__options">
@@ -54,11 +54,11 @@ class ProductDetails extends Component {
                 <img id={1} src={product.src + option1} alt={product.alt} className="details__preview" onClick={(e) => this.updateImage(e)} style={this.state.selectedId == 1 ? {border: "2px solid black"} : {border: "none"}} />
             </div>
             <img className="details__main__image" src={selectedSrc} alt={product.alt} />
-            <div>
+            <div className="grid-span-2">
               <h2 className="details__title">{product.title}</h2>
               <p className="details__description">{product.description}</p>
             </div>
-            <div>
+            <div className="grid-span-2">
               <label className="label" htmlFor="quantity">Quantity</label>
               <input type="number" id="quantity" min="0" max="100" onChange={this.handleChange}/>
               <button 
