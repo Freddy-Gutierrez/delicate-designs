@@ -37,7 +37,7 @@
   font-weight: 400;
 }
 
-@media (min-width: 775px) {
+@media (min-width: 768px) {
   .details {
     grid-template-columns: 10% 1fr;
     grid-template-rows: 60% min-content min-content;

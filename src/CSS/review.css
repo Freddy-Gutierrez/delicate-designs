@@ -1,3 +1,8 @@
+h1,
+h2 {
+  text-align: center;
+}
+
 .no-reviews {
   display: flex;
   justify-content: space-between;
@@ -5,29 +10,21 @@
   width: 50%;
 }
 
-.review-container {
-  display: flex;
-  width: 75%;
-  margin: auto;
-  border-width: 5px;
+.review {
+  gap: 1% 0;
 }
 
 /* css for stars container on left of page */
 .stars-container {
-  display: flex;
-  flex-wrap: wrap;
-  height: 40%;
-  padding-left: 2%;
-  margin-right: 5%;
+  width: 80%;
 }
 
 .star-component {
   display: flex;
-  width: 250%;
 }
 
 .progress {
-  width: 60%;
+  width: 50%;
   margin-top: 0.5em;
 }
 
@@ -46,28 +43,22 @@
 
 /* css for right column of page */
 .review-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-left: 2%;
-  padding-right: 2%;
-  flex-basis: 80%;
+  width: 100%;
 }
 
 .review-button {
-  height: 50px;
-  width: 200px;
-  padding-top: 10px;
-  max-width: 200px;
-  margin-top: 0.3em;
-  text-decoration: none !important;
-  text-align: center;
   background: white;
-  color: black;
-  font-weight: bold;
-  font-size: medium;
-  border: solid black;
   border-radius: 8px;
+  border: solid black;
+  color: black;
+  font-size: medium;
+  font-weight: bold;
+  height: 30px;
+  margin-top: 0.3em;
+  max-width: 200px;
+  text-align: center;
+  text-decoration: none !important;
+  width: 200px;
 }
 
 .review-button:hover {
@@ -82,7 +73,7 @@
 }
 
 #dropdown-basic-button {
-  width: 400px;
+  width: 275px;
   flex: 1;
   color: grey;
   font-weight: bold;
@@ -90,8 +81,7 @@
   border: solid grey;
   border-radius: 8px;
   border-width: 1px;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 1rem 0;
 }
 
 .feedback-container {
@@ -115,51 +105,86 @@ td {
   border: 1px solid black;
 }
 
-.review-row {
+.review-flex {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  flex-basis: 100%;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .two-col {
   display: flex;
-  flex-basis: 100%;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.two-col > div:first-of-type {
+  margin-right: 2rem;
 }
 
 .review-username {
-  flex-basis: 100%;
+  font-size: 2rem;
 }
 
 .review-comment {
-  font-size: 25px;
-  padding-bottom: 5%;
+  font-size: 1.7rem;
+  text-align: start;
+  width: 100%;
 }
 
 .helpful {
-  cursor: pointer;
   color: blue;
+  cursor: pointer;
+  padding-right: 2rem;
+  text-align: right;
   text-decoration: underline;
-  padding-top: 2em;
+  width: 100%;
 }
 
 .p-review {
-  margin-right: 4em;
   color: grey;
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
-
-/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  p {
+    font-size: 1.1rem;
+  }
+  .review-username {
+    font-size: 2.5rem;
+  }
+  .review-comment {
+    font-size: 2rem;
+  }
+  .helpful {
+    font-size: 1.5rem;
+  }
+  .grid-cols-3 {
+    grid-template-columns: 300px 1fr;
+  }
+  .review-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .review-flex:last-child {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .review-button {
+    width: 150px;
+  }
+  #dropdown-basic-button {
+    width: 185px;
+    font-size: 1.3rem;
+  }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
+  .review-button {
+    width: 175px;
+  }
+  #dropdown-basic-button {
+    width: 300px;
+    font-size: 1.3rem;
+  }
 }
