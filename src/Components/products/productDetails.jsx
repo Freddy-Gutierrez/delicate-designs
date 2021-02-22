@@ -30,17 +30,6 @@ class ProductDetails extends Component {
     this.setState({quantity});
   }
 
-  // incrementQuantity = () => {
-  //   let quantity = this.state.quantity + 1;
-  //   this.setState({ quantity });
-  // };
-
-  // decrementQuantity = () => {
-  //   let quantity = this.state.quantity - 1;
-  //   this.setState({ quantity });
-  // };
-
-
   render() {
     const { product, selectedSrc, quantity } = this.state;  
     console.log(product);

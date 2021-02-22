@@ -6,6 +6,7 @@ class FeedbackForm extends Component {
     handleChange = ({ currentTarget: input }) => {
         const comment = { ...this.state.comment };
         comment[input.name] = input.value;
+        console.log(comment);
         this.setState({ comment });
       };
     
@@ -18,9 +19,35 @@ class FeedbackForm extends Component {
 
     render() { 
         return ( 
-            <div className="table-wrapper">
+            <div className="container">
+                <h1 className="page-title">Please Give Your Feedback</h1>                    
                 <form onSubmit={this.handleSubmit} className="form">
-                <table className="feedback-table">
+                    <div className="form__group">
+                        <label htmlFor="rating">Rating</label>
+                        <div className="radio-container">
+                            <span>1</span>
+                            <input type="radio" id="rating" name="rating" onChange={this.handleChange} value={1} required/>
+                            <input type="radio" id="rating" name="rating" onChange={this.handleChange} value={2} required/>
+                            <input type="radio" id="rating" name="rating" onChange={this.handleChange} value={3} required/>
+                            <input type="radio" id="rating" name="rating" onChange={this.handleChange} value={4} required/>
+                            <input type="radio" id="rating" name="rating" onChange={this.handleChange} value={5} required/>
+                            <span>5</span>
+                        </div>
+                    </div>
+                    <div className="form__group">
+                        <label htmlFor="review">Review</label>
+                        <textarea
+                            id="review"
+                            name="review"
+                            className="feedback__text"
+                            rows="5"
+                            cols="55"
+                            onChange={this.handleChange}
+                            required
+                        />
+                    </div>                         
+                    <button className="custom-btn custom-btn-blue">Submit</button>
+                {/* <table className="feedback-table">
                     <thead>
                         <tr>
                             <td colSpan={2}> <div style={{textAlign: "center"}}>Please give your feedback</div> </td>
@@ -58,7 +85,7 @@ class FeedbackForm extends Component {
                             </td>
                         </tr>
                     </tbody>     
-                </table>
+                </table> */}
                 </form>               
             </div>
          );

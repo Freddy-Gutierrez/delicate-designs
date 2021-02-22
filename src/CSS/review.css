@@ -3,6 +3,10 @@ h2 {
   text-align: center;
 }
 
+span {
+  font-size: 1.5rem;
+}
+
 .no-reviews {
   display: flex;
   justify-content: space-between;
@@ -91,20 +95,6 @@ h2 {
   border-bottom: solid 1px grey;
 }
 
-.table-wrapper {
-  width: 25%;
-  margin: auto;
-}
-
-.feedback-table {
-  width: 100%;
-  margin-top: 50%;
-}
-
-td {
-  border: 1px solid black;
-}
-
 .review-flex {
   display: flex;
   flex-direction: column;
@@ -145,9 +135,38 @@ td {
   color: grey;
 }
 
+input[type="radio"] {
+  margin: 0 3px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-title {
+  font-size: 2.4rem;
+}
+
+.feedback__text {
+  margin-bottom: 3%;
+}
+
 @media (min-width: 768px) {
   p {
     font-size: 1.1rem;
+  }
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
   }
   .review-username {
     font-size: 2.5rem;
@@ -177,9 +196,23 @@ td {
     width: 185px;
     font-size: 1.3rem;
   }
+  .form {
+    align-items: flex-start;
+    width: 400px;
+    margin: auto;
+  }
+  .form__group {
+    flex-direction: row;
+  }
+  .form button {
+    margin: auto;
+  }
 }
 
 @media (min-width: 1024px) {
+  .page-title {
+    font-size: 4rem;
+  }
   .review-button {
     width: 175px;
   }
