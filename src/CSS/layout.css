@@ -9,6 +9,7 @@ label {
 }
 
 input[type="text"],
+input[type="password"],
 input[type="number"] {
   border: 1px solid #ced4da;
   border-radius: 5px;
@@ -18,6 +19,7 @@ input[type="number"] {
 }
 
 input[type="text"]:focus,
+input[type="password"]:focus,
 input[type="number"]:focus {
   outline: 0;
   border-color: #86b7fe;
@@ -45,7 +47,11 @@ input[type="number"]:focus {
 }
 
 .custom-btn-blue {
-  background-color: rgb(241, 241, 241);
+  background-color: #add8e6;
+}
+
+.custom-btn-block {
+  width: 100%;
 }
 
 .flex-block {

@@ -19,26 +19,22 @@ class Login extends Component {
     login(username, password);
   };
 
-  render() {
-    // if (getCurrentUser()) return <Redirect to="/candidates" />;
+  render() {  
     return (
-      <div>
-        <div className="login-container">
-          <span>
-            <h3>Login</h3>
-            <form onSubmit={this.handleSubmit}>
-              <p style={{marginBottom: "0px"}}>Username</p>
-              <input type="text" style={{marginBottom: "5px"}} name="username" onChange={this.handleChange} />
-              <p style={{marginBottom: "0px"}}>Password</p>
-              <input type="password" style={{marginBottom: "5px"}} name="password" onChange={this.handleChange}/>
-              <p>
-                <button type="submit">Login</button>
-              </p>
-              <p>
-                Don't have an account?<Link to="/signup">Sign Up</Link>
-              </p>
-            </form>            
-          </span>
+      <div className="container login">
+        <div className="login__container">
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              <label htmlFor="username">Username</label>
+              <input type="text" name="username" onChange={this.handleChange} autoFocus={true}/>
+            </div>
+            <div>
+              <label htmlFor="password">Password</label>
+              <input type="password" name="password" onChange={this.handleChange} />
+            </div>
+            <button className="custom-btn custom-btn-blue custom-btn-block" type="submit">Login</button>
+            <p className="login__swap">Don't have an account?<Link className="login__link" to="/signup">Sign Up</Link></p>
+          </form>
         </div>
       </div>
     );
