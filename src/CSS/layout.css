@@ -26,6 +26,10 @@ input[type="number"]:focus {
   box-shadow: 0 0 0 4px #b9d3fa;
 }
 
+.container {
+  max-width: 1140px;
+}
+
 .custom-btn {
   border: none;
   color: #333;

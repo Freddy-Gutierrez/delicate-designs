@@ -20,9 +20,8 @@ class Login extends Component {
   };
 
   render() {  
-    return (
-      <div className="container login">
-        <div className="login__container">
+    return (      
+        <div className="container login__container">
           <form onSubmit={this.handleSubmit}>
             <div>
               <label htmlFor="username">Username</label>
@@ -35,8 +34,7 @@ class Login extends Component {
             <button className="custom-btn custom-btn-blue custom-btn-block" type="submit">Login</button>
             <p className="login__swap">Don't have an account?<Link className="login__link" to="/signup">Sign Up</Link></p>
           </form>
-        </div>
-      </div>
+        </div>      
     );
   }
 }
