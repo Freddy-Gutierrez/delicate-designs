@@ -223,6 +223,10 @@
     order: 2;
     height: fit-content;
   }
+  .cart__items {
+    max-height: 525px;
+    overflow: auto;
+  }
 }
 
 @media (min-width: 1024px) {
