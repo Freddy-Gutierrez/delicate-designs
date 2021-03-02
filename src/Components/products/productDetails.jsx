@@ -37,7 +37,7 @@ class ProductDetails extends Component {
         !this.state.product ? <div/> :
         <div className="container">
             <h1 className="page-title">Product details</h1>
-            <div className="grid grid-cols-3 details">
+            <div className="grid grid-cols details">
             <div className="details__image__options">
                 <img id={0} src={product.src + option0} alt={product.alt} className="details__preview" onClick={(e) => this.updateImage(e)} style={this.state.selectedId == 0 ? {border: "2px solid black"} : {border: "none"}} />
                 <img id={1} src={product.src + option1} alt={product.alt} className="details__preview" onClick={(e) => this.updateImage(e)} style={this.state.selectedId == 1 ? {border: "2px solid black"} : {border: "none"}} />

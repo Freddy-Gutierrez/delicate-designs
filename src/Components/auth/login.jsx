@@ -22,7 +22,7 @@ class Login extends Component {
   render() {  
     return (      
         <div className="container login__container">
-          <form onSubmit={this.handleSubmit}>
+          <form className="login__form" onSubmit={this.handleSubmit}>
             <div>
               <label htmlFor="username">Username</label>
               <input type="text" name="username" onChange={this.handleChange} autoFocus={true}/>

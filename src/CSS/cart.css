@@ -1,4 +1,4 @@
-.cart-container {
+/* .cart-container {
   display: flex;
   flex-wrap: wrap;
   width: 60%;
@@ -65,8 +65,9 @@
   flex-basis: 100%;
   background-color: rgb(223, 219, 219);
 }
+*/
 
-.cart-entry {
+/* .cart-entry {
   display: flex;
   flex-basis: 100%;
   justify-content: space-around;
@@ -97,9 +98,7 @@
   background: none !important;
   border: none;
   padding: 0 !important;
-  /*optional*/
   font-family: arial, sans-serif;
-  /*input has OS specific font-family*/
   color: #069;
   text-decoration: underline;
   cursor: pointer;
@@ -118,4 +117,138 @@
 .bold {
   font-weight: bold;
   margin-right: 5px;
+} */
+
+/* shipping info */
+.shipping {
+  width: 80%;
+}
+
+.shipping .custom-btn {
+  margin: auto;
+}
+
+.shipping__title {
+  margin-bottom: 10px;
+}
+
+.shipping__flexcol {
+  display: flex;
+  flex-direction: column;
+}
+
+.shipping__label {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.shipping__flexrow {
+  display: flex;
+}
+
+.shipping__text {
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.shipping__optional {
+  margin-top: 5px;
+}
+
+.checkbox {
+  margin: 5px 5px 0 0;
+}
+
+.shipping__flexcol:last-of-type {
+  margin-bottom: 10px;
+}
+
+/* cart items */
+.cart p {
+  font-size: 1.25rem;
+}
+
+.cart input {
+  width: 100%;
+}
+
+.cart {
+  order: -1;
+  height: fit-content;
+}
+
+.cart__items {
+  max-height: 600px;
+  overflow: auto;
+}
+
+.cart__entry {
+  margin-bottom: 10px;
+}
+
+.cart__image {
+  width: 100%;
+}
+
+.cart__title {
+  font-size: 1.5rem;
+}
+
+.cart__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cart__total {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.remove {
+  width: 80px;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  font-family: arial, sans-serif;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cart {
+    order: 2;
+    height: fit-content;
+  }
+}
+
+@media (min-width: 1024px) {
+  .shipping__title {
+    font-size: 3rem;
+  }
+  .shipping__label {
+    font-size: 2rem;
+  }
+  .shipping__text {
+    font-size: 1.5rem;
+  }
+  .checkbox {
+    margin: 10px 5px 0 0;
+  }
+  .cart__title {
+    font-size: 2rem;
+  }
+  .cart p {
+    font-size: 1.75rem;
+  }
+  .remove {
+    font-size: 1.5rem;
+  }
+
+  .cart__total {
+    font-size: 2.5rem;
+  }
 }

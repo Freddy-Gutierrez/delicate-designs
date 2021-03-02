@@ -39,6 +39,7 @@ class Cart extends Component {
     event.preventDefault();
     const {data, total} = this.state;
     const options = { abortEarly: false };
+    console.log(data);
     const schema = {
       first: Joi.string().min(1).max(20).label("First Name").required(),
       last: Joi.string().min(1).max(20).label("Last Name").required(),
@@ -46,7 +47,7 @@ class Cart extends Component {
       optional: Joi.string().min(0).max(20).allow(''),
       city: Joi.string().min(1).max(20).label("City").required(),
       state: Joi.string().min(2).max(2).label("State").required(),
-      zip: Joi.string().min(5).max(5).label("Zip").required(),
+      zip: Joi.string().min(1).max(5).label("Zip").required(),
       email: Joi.string().email().label("Email"),
       phone: Joi.string().label("Phone Number").required()
     }
@@ -72,7 +73,7 @@ class Cart extends Component {
     console.log(this.props)
     return (      
       cart === [] ? <div/> :       
-      <div className="cart-container">
+      <div className="container grid grid-cols">
         <ShippingInfo onChange={this.handleChange} onSubmit={this.goToPayment}/>
         <OrderSummary 
           cart={cart}

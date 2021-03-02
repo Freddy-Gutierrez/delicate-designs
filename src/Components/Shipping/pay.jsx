@@ -27,7 +27,7 @@ class Pay extends Component {
 
     render() {         
         const {total, data} = this.props.location.state;
-        return ( 
+        return (  
             <div className="payment-container">
                 <h1>PAYMENT</h1>
                 <form onSubmit={this.submitOrder}>

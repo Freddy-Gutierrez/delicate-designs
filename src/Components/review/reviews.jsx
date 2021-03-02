@@ -82,7 +82,7 @@ class Reviews extends Component {
         <h1>Be the first to leave a review!</h1>
         <Link to={`/feedback-form/${productId}`} className="review-button">Write a review</Link>
       </div> :
-      <div className="container grid grid-cols-3 review">
+      <div className="container grid grid-cols review">
         <div className="stars-container">
             <h2>{`Overall rating ${productReview.avgRating}`}</h2>            
             <ReviewStars 
