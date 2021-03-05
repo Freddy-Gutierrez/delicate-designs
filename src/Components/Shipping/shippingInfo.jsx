@@ -3,7 +3,7 @@ import SelectStates from './selectStates';
 const ShippingInfo = (props) => {
     const {onChange, onSubmit} = props;
     return ( 
-        <div className="shipping">
+        <div className="shipping" data-aos="zoom-in-right">
                 <form onSubmit={onSubmit}>                   
                     <h2 className="shipping__title">Shipping Information</h2>      
                     <div className="shipping__flexcol">

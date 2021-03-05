@@ -5,7 +5,7 @@ const OrderSummary = (props) => {
     const {cart, total, remove, history} = props;
     const image = "/option0.jpg";
     return ( 
-        <div className="cart">
+        <div className="cart" data-aos="zoom-in-left">
         <h2 className="shipping__title">Order Summary</h2>
         <div className="cart__items">
           {cart.map((product, i) => {

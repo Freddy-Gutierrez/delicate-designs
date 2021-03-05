@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import StarRatings from "react-star-ratings";
 import { NavLink } from "react-router-dom";
+import "../../CSS/product.css";
 
 const image = "/option0.jpg";
 class Products extends Component {
@@ -14,7 +15,7 @@ class Products extends Component {
         <div className="products-container">
           {this.props.products.map((product) => {
             return (
-              <div className="product-card" key={product._id}>
+              <div className="product-card" key={product._id} data-aos="fade-up">
                 <img
                   className="product__image"
                   src={product.src + image}

@@ -14,14 +14,7 @@ import Signup from './Components/auth/signup';
 import {getCurrentUser, logout} from './services/auth';
 import 'react-toastify/dist/ReactToastify.css';
 import "./CSS/layout.css";
-import "./CSS/carousel.css";
-import "./CSS/review.css";
 import "./CSS/productDetails.css";
-import "./CSS/cart.css";
-import "./CSS/login.css";
-import "./CSS/payment.css";
-import "./CSS/nav.css";
-import "./CSS/product.css";
 
 class App extends Component {
   state = { 
@@ -62,7 +55,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="background">
+      <div>
         <NavigationBar cartIcon={this.state.cartIcon} signout={this.signout}/>
         <Switch>
           <Route

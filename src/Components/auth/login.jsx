@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { login } from "../../services/auth";
 import { Link } from "react-router-dom";
+import "../../CSS/login.css";
 
 class Login extends Component {
   state = {

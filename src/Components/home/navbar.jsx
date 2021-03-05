@@ -2,6 +2,7 @@ import React from "react";
 import {getCurrentUser} from '../../services/auth';
 import { Nav, Navbar } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
+import "../../CSS/nav.css";
 
 const NavigationBar = (props) => {
   const pathname = useLocation().pathname;

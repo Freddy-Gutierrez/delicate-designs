@@ -2,6 +2,11 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 label {
   font-size: 2rem;
   padding-right: 1rem;
@@ -61,15 +66,9 @@ input[type="number"]:focus {
 .flex-block {
   display: flex;
   width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.background {
-  background-color: rgb(255, 208, 215);
   height: 100vh;
-  overflow: auto;
+  justify-content: center;
+  align-content: center;
 }
 
 .page-title {

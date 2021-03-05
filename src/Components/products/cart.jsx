@@ -3,6 +3,7 @@ import Joi from 'joi-browser';
 import { toast } from 'react-toastify';
 import OrderSummary from "../Shipping/orderSummary";
 import ShippingInfo from '../Shipping/shippingInfo';
+import "../../CSS/cart.css";
 
 class Cart extends Component {
 
@@ -74,11 +75,14 @@ class Cart extends Component {
     return (      
       cart === [] ? <div/> :       
       <div className="container grid grid-cols">
-        <ShippingInfo onChange={this.handleChange} onSubmit={this.goToPayment}/>
+        <ShippingInfo 
+          onChange={this.handleChange} 
+          onSubmit={this.goToPayment} 
+          />
         <OrderSummary 
           cart={cart}
           total={total}
-          remove={this.remove}       
+          remove={this.remove}              
         />
       </div>
     );

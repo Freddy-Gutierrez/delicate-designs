@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "../../CSS/payment.css";
 var valid = require('card-validator');
 
 class Pay extends Component {

@@ -6,6 +6,7 @@ import Select from "../common/select";
 import Feedback from "./feedback";
 import { getReviews, getFilteredReviews, updateHelpful } from '../../services/reviewService';
 import ReviewStars from "./reviewStar";
+import "../../CSS/review.css";
 
 class Reviews extends Component {
   state = {productReview: null };
@@ -83,7 +84,7 @@ class Reviews extends Component {
         <Link to={`/feedback-form/${productId}`} className="review-button">Write a review</Link>
       </div> :
       <div className="container grid grid-cols review">
-        <div className="stars-container">
+        <div className="stars-container" data-aos="zoom-in-right">
             <h2>{`Overall rating ${productReview.avgRating}`}</h2>            
             <ReviewStars 
               totalReviews={productReview.reviews.length}
@@ -95,7 +96,7 @@ class Reviews extends Component {
               onClick={this.showReviews}
             />
           </div>
-          <div className="review-content">
+          <div className="review-content" data-aos="zoom-in-left">
             <div className="review-flex">
               <h1>All Reviews</h1>
               <Link to={`/feedback-form/${productReview.productId}`} className="review-button">Write a review</Link>

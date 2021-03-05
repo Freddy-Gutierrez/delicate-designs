@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Products from "./products";
 import { getBanners, getPillows, getShirts, getTumblers, getToppers, getTotes } from '../../services/productsService';
 
+
 class ProductsPage extends Component {
     state = {products: null};
   

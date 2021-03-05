@@ -35,7 +35,7 @@ class ProductDetails extends Component {
     console.log(product);
     return (
         !this.state.product ? <div/> :
-        <div className="container">
+        <div className="container" data-aos="zoom-in">
             <h1 className="page-title">Product details</h1>
             <div className="grid grid-cols details">
             <div className="details__image__options">

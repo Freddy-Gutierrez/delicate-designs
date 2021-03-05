@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Carousel } from "react-bootstrap";
+import "../../CSS/carousel.css";
 
 const wmCup = "/tumblers/watermelon/option0.jpg";
 const badbunnyCup = "/tumblers/badbunny/option0.jpg";
@@ -15,7 +16,7 @@ class Slides extends Component {
   state = {};
   render() {
     return (
-      <div className="carousel-container">        
+      <div className="carousel-container" data-aos="zoom-in-left">        
           <Carousel>
             <Carousel.Item>
               <img className="carousel-img" src={wmCup} alt="Watermelon Cup" />
