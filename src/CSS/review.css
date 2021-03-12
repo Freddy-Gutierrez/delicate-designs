@@ -1,8 +1,3 @@
-h1,
-h2 {
-  text-align: center;
-}
-
 span {
   font-size: 1.5rem;
 }
@@ -38,7 +33,7 @@ span {
   border: none;
   padding: 0 !important;
   /*optional*/
-  font-family: arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   /*input has OS specific font-family*/
   color: #069;
   text-decoration: underline;
@@ -119,12 +114,14 @@ span {
 .review-comment {
   font-size: 1.7rem;
   text-align: start;
+  font-family: "Montserrat", sans-serif;
   width: 100%;
 }
 
 .helpful {
   color: blue;
   cursor: pointer;
+  font-family: "Montserrat", sans-serif;
   padding-right: 2rem;
   text-align: right;
   text-decoration: underline;

@@ -7,6 +7,24 @@ body {
   padding: 0;
 }
 
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  text-align: center;
+}
+
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+p,
+a,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
 label {
   font-size: 2rem;
   padding-right: 1rem;
@@ -18,8 +36,9 @@ input[type="password"],
 input[type="number"] {
   border: 1px solid #ced4da;
   border-radius: 5px;
-  padding: 0.5rem 0.7rem;
+  font-family: "Montserrat", sans-serif;
   height: 3rem;
+  padding: 0.5rem 0.7rem;
   transition: border 0.15s, box-shadow 0.15s;
 }
 
@@ -33,6 +52,12 @@ input[type="number"]:focus {
 
 .container {
   max-width: 1140px;
+}
+
+.toastBody {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
 }
 
 .custom-btn {

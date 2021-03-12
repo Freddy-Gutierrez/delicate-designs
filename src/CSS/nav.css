@@ -3,8 +3,7 @@
   width: 100%;
 }
 
-.nav-items,
-a {
+.nav-items {
   font-size: 1.3rem;
 }
 
@@ -24,7 +23,9 @@ a {
 
 .nav-right {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
   right: 2%;
 }
@@ -35,10 +36,23 @@ a {
 
 .username {
   color: black;
-  margin-right: -1.5rem;
+
   margin-bottom: 0;
 }
 
 .login {
   margin-right: 1.5rem;
+}
+
+.remove {
+  background-color: transparent;
+  border: none;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+@media (min-width: 1024px) {
+  .remove {
+    font-size: 1.2rem;
+  }
 }

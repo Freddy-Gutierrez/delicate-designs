@@ -13,7 +13,7 @@ import FeedbackForm from './Components/review/feedbackForm';
 import Signup from './Components/auth/signup';
 import {getCurrentUser, logout} from './services/auth';
 import 'react-toastify/dist/ReactToastify.css';
-import "./CSS/layout.css";
+import "./CSS/style.css";
 import "./CSS/productDetails.css";
 
 class App extends Component {
@@ -121,7 +121,7 @@ class App extends Component {
           <Route path="/reviews/:id" component={Reviews} />
           <Route path="/" component={Home} />
         </Switch>
-        <ToastContainer position="bottom-center"/>
+        <ToastContainer position="bottom-center" bodyClassName="toastBody"/>
       </div>
     );
   }
