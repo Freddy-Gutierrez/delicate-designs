@@ -10,8 +10,8 @@
   transition: transform 0.3s;
 }
 
-.product-card:hover {
-  transform: scale(1.05);
+.product-card[data-aos="fade-up"]:hover {
+  transform: scale(1.05) !important;
   cursor: pointer;
 }
 
